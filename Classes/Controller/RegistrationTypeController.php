@@ -38,18 +38,9 @@ class Tx_PhzHresregistration_Controller_RegistrationTypeController extends Tx_Ph
 	 * registrationTypeRepository
 	 *
 	 * @var Tx_PhzHresregistration_Domain_Repository_RegistrationTypeRepository
+	 * @inject
 	 */
 	protected $registrationTypeRepository;
-
-	/**
-	 * injectRegistrationTypeRepository
-	 *
-	 * @param Tx_PhzHresregistration_Domain_Repository_RegistrationTypeRepository $registrationTypeRepository
-	 * @return void
-	 */
-	public function injectRegistrationTypeRepository(Tx_PhzHresregistration_Domain_Repository_RegistrationTypeRepository $registrationTypeRepository) {
-		$this->registrationTypeRepository = $registrationTypeRepository;
-	}
 
 	/**
 	 * action show

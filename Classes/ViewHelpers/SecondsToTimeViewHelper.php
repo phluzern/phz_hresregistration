@@ -12,8 +12,7 @@ class Tx_PhzHresregistration_ViewHelpers_SecondsToTimeViewHelper extends Tx_Flui
      * @param integer $seconds
      * @return string
      */
-    public function render($seconds)
-    {
+    public function render($seconds) {
         $hours = $this->getHours($seconds);
         $minutes = $this->getRemainingMinutes($seconds, $hours);
         return str_pad($hours, 2, '0', STR_PAD_LEFT) . ':' . str_pad($minutes, 2, '0', STR_PAD_LEFT);

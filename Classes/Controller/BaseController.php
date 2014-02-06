@@ -35,14 +35,16 @@
 class Tx_PhzHresregistration_Controller_BaseController extends Tx_Extbase_MVC_Controller_ActionController {
 
 	/**
-	* @param array $recipient recipient of the email in the format array('recipient@domain.tld' => 'Recipient Name')
-	* @param array $sender sender of the email in the format array('sender@domain.tld' => 'Sender Name')
-	* @param string $subject subject of the email
-	* @param string $templateName template name (UpperCamelCase)
-	* @param array $variables variables to be passed to the Fluid view
-	* @param array $attachments variables to be passed to the SwiftMailer
-	* @return boolean TRUE on success, otherwise false
-	*/
+	 * @param array $recipient recipient of the email in the format array('recipient@domain.tld' => 'Recipient Name')
+	 * @param array $sender sender of the email in the format array('sender@domain.tld' => 'Sender Name')
+	 * @param array $cc
+	 * @param string $subject subject of the email
+	 * @param string $templateName template name (UpperCamelCase)
+	 * @param array $variables variables to be passed to the Fluid view
+	 * @param array $attachments variables to be passed to the SwiftMailer
+	 * @param string $embeddedFile
+	 * @return boolean TRUE on success, otherwise false
+	 */
 	protected function sendTemplateEmail(array $recipient, array $sender, array $cc, $subject, $templateName, array $variables = array(), array $attachments = array(), $embeddedFile = '') {
 		$emailView = $this->objectManager->create('Tx_Fluid_View_StandaloneView');
 		$emailView->setFormat('html');
@@ -69,7 +71,7 @@ class Tx_PhzHresregistration_Controller_BaseController extends Tx_Extbase_MVC_Co
 			$message->attach($attachment);
 		}
 
-			// HTML Email
+		// HTML Email
 		$message->setBody($emailBody, 'text/html');
 
 		$message->send();

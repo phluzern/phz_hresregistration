@@ -121,12 +121,9 @@ class Tx_PhzHresregistration_Domain_Model_Workshop extends Tx_Extbase_DomainObje
 	protected $room;
 
 	/**
-	 * __construct
-	 *
-	 * @return void
+	 * @return \Tx_PhzHresregistration_Domain_Model_Workshop
 	 */
 	public function __construct() {
-
 	}
 
 	/**

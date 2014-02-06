@@ -58,9 +58,7 @@ class Tx_PhzHresregistration_Domain_Model_RegistrationType extends Tx_Extbase_Do
 	protected $price;
 
 	/**
-	 * __construct
-	 *
-	 * @return void
+	 * @return \Tx_PhzHresregistration_Domain_Model_RegistrationType
 	 */
 	public function __construct() {
 

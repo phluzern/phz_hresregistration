@@ -38,35 +38,17 @@ class Tx_PhzHresregistration_Controller_WorkshopController extends Tx_PhzHresreg
 	 * workshopRepository
 	 *
 	 * @var Tx_PhzHresregistration_Domain_Repository_WorkshopRepository
+	 * @inject
 	 */
 	protected $workshopRepository;
-
-	/**
-	 * injectWorkshopRepository
-	 *
-	 * @param Tx_PhzHresregistration_Domain_Repository_WorkshopRepository $workshopRepository
-	 * @return void
-	 */
-	public function injectWorkshopRepository(Tx_PhzHresregistration_Domain_Repository_WorkshopRepository $workshopRepository) {
-		$this->workshopRepository = $workshopRepository;
-	}
 
 	/**
 	 * registrationRepository
 	 *
 	 * @var Tx_PhzHresregistration_Domain_Repository_RegistrationRepository
+	 * @inject
 	 */
 	protected $registrationRepository;
-
-	/**
-	 * injectRegistrationRepository
-	 *
-	 * @param Tx_PhzHresregistration_Domain_Repository_RegistrationRepository $registrationRepository
-	 * @return void
-	 */
-	public function injectRegistrationRepository(Tx_PhzHresregistration_Domain_Repository_RegistrationRepository $registrationRepository) {
-		$this->registrationRepository = $registrationRepository;
-	}
 
 	/**
 	 * action list

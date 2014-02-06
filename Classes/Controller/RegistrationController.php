@@ -38,52 +38,25 @@ class Tx_PhzHresregistration_Controller_RegistrationController extends Tx_PhzHre
 	 * registrationRepository
 	 *
 	 * @var Tx_PhzHresregistration_Domain_Repository_RegistrationRepository
+	 * @inject
 	 */
 	protected $registrationRepository;
-
-	/**
-	 * injectRegistrationRepository
-	 *
-	 * @param Tx_PhzHresregistration_Domain_Repository_RegistrationRepository $registrationRepository
-	 * @return void
-	 */
-	public function injectRegistrationRepository(Tx_PhzHresregistration_Domain_Repository_RegistrationRepository $registrationRepository) {
-		$this->registrationRepository = $registrationRepository;
-	}
 
 	/**
 	 * registrationTypeRepository
 	 *
 	 * @var Tx_PhzHresregistration_Domain_Repository_RegistrationTypeRepository
+	 * @inject
 	 */
 	protected $registrationTypeRepository;
-
-	/**
-	 * injectRegistrationTypeRepository
-	 *
-	 * @param Tx_PhzHresregistration_Domain_Repository_RegistrationTypeRepository $registrationTypeRepository
-	 * @return void
-	 */
-	public function injectRegistrationTypeRepository(Tx_PhzHresregistration_Domain_Repository_RegistrationTypeRepository $registrationTypeRepository) {
-		$this->registrationTypeRepository = $registrationTypeRepository;
-	}
 
 	/**
 	 * workshopRepository
 	 *
 	 * @var Tx_PhzHresregistration_Domain_Repository_WorkshopRepository
+	 * @inject
 	 */
 	protected $workshopRepository;
-
-	/**
-	 * injectWorkshopRepository
-	 *
-	 * @param Tx_PhzHresregistration_Domain_Repository_WorkshopRepository $workshopRepository
-	 * @return void
-	 */
-	public function injectWorkshopRepository(Tx_PhzHresregistration_Domain_Repository_WorkshopRepository $workshopRepository) {
-		$this->workshopRepository = $workshopRepository;
-	}
 
 	/**
 	 * action show

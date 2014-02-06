@@ -218,14 +218,11 @@ class Tx_PhzHresregistration_Domain_Model_Registration extends Tx_Extbase_Domain
 	 */
 	protected $userLanguage;
 
-    
+
 	/**
-	 * __construct
-	 *
-	 * @return void
+	 * @return \Tx_PhzHresregistration_Domain_Model_Registration
 	 */
 	public function __construct() {
-
 	}
 
 	/**

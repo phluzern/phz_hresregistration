@@ -34,6 +34,10 @@
  */
 class Tx_PhzHresregistration_Domain_Repository_RegistrationTypeRepository extends Tx_Extbase_Persistence_Repository {
 
+	/**
+	 * @param integer $uid
+	 * @return Tx_Extbase_Persistence_QueryResultInterface
+	 */
 	public function findOneByL10nParent($uid) {
 		$query = $this->createQuery();
 		$query->getQuerySettings()->setRespectSysLanguage(FALSE);

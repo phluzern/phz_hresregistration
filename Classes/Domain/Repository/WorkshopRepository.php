@@ -39,6 +39,10 @@ class Tx_PhzHresregistration_Domain_Repository_WorkshopRepository extends Tx_Ext
          'sorting' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING
      );
 
+	/**
+	 * @param integer $uid
+	 * @return Tx_Extbase_Persistence_QueryResultInterface
+	 */
 	public function findOneByL10nParent($uid) {
 		$query = $this->createQuery();
 		$query->getQuerySettings()->setRespectSysLanguage(FALSE);

@@ -38,6 +38,9 @@ class Tx_PhzHresregistration_Domain_Repository_RegistrationRepository extends Tx
          'uid' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING,
      );
 
+	/**
+	 * @return Tx_Extbase_Persistence_QueryResultInterface
+	 */
 	public function findAllAssigned() {
 		$query = $this->createQuery();
 		$query->getQuerySettings()->setRespectSysLanguage(FALSE);
@@ -51,6 +54,12 @@ class Tx_PhzHresregistration_Domain_Repository_RegistrationRepository extends Tx
 		)->execute();
 	}
 
+	/**
+	 * @param $workshop
+	 * @param $block
+	 * @param $suffix
+	 * @return Tx_Extbase_Persistence_QueryResultInterface
+	 */
 	public function findByWorkshopInterestAndBlockAndFieldSuffix($workshop, $block, $suffix) {
 		$fieldName = 'block' . $block . '_' . $suffix;
 		$query = $this->createQuery();
