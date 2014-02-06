@@ -2,399 +2,457 @@
 
 <div id="tabs">
 	<ul>
-		<li><a href="#tabs-1"><f:translate key="tx_phzhresregistration_domain_model_registration.tab.registrationtype" /></a></li>
-		<li><a href="#tabs-2"><f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops" /></a></li>
-		<li><a href="#tabs-3"><f:translate key="tx_phzhresregistration_domain_model_registration.tab.personaldata" /></a></li>
-		<li><a href="#tabs-4"><f:translate key="tx_phzhresregistration_domain_model_registration.tab.complete" /></a></li>
+		<li><a href="#tabs-1">
+			<f:translate key="tx_phzhresregistration_domain_model_registration.tab.registrationtype"/>
+		</a></li>
+		<li><a href="#tabs-2">
+			<f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops"/>
+		</a></li>
+		<li><a href="#tabs-3">
+			<f:translate key="tx_phzhresregistration_domain_model_registration.tab.personaldata"/>
+		</a></li>
+		<li><a href="#tabs-4">
+			<f:translate key="tx_phzhresregistration_domain_model_registration.tab.complete"/>
+		</a></li>
 	</ul>
 	<div id="tabs-1">
-		<f:form.select name="registrationType" property="registrationType" id="registrationType" value="{registration.registrationType}" options="{registrationTypes}" optionLabelField="caption" optionValueField="uid" />
+		<f:form.select name="registrationType" property="registrationType" id="registrationType"
+					   value="{registration.registrationType}" options="{registrationTypes}" optionLabelField="caption"
+					   optionValueField="uid"/>
 	</div>
 	<div id="tabs-2">
 		<div id="selectWorkshops">
 
-		<f:groupedFor each="{workshops}" as="workshopsOfBlock" groupBy="block" groupKey="groupNumber">
+			<f:groupedFor each="{workshops}" as="workshopsOfBlock" groupBy="block" groupKey="groupNumber">
 
-			<div class="block" id="block{groupNumber}">
+				<div class="block" id="block{groupNumber}">
 
-				<f:for each="{workshopsOfBlock}" as="workshop" iteration="iterator">
-					<f:if condition="{iterator.isFirst}">
-						<h3 class="block{groupNumber}">Block {groupNumber}, <phzhres:secondsToTime seconds="{workshop.fromtime}" /> - <phzhres:secondsToTime seconds="{workshop.totime}" /> <f:translate key="tx_phzhresregistration_domain_model_registration.text.timeformat" /></h3>
-					    <div class="blocklegend">
-                            <span class="tooltip" title='<f:translate key="tx_phzhresregistration_domain_model_registration.header.tooltip" />'><f:translate key="tx_phzhresregistration_domain_model_registration.header" /></span>
-					    </div>
-                    </f:if>
-
-					<div class="block{groupNumber}Workshop">
-
-						<f:form.radio class="block{groupNumber}Pri1" name="newRegistration[block{groupNumber}Pri1]" value="{workshop.uid}" /><f:form.radio class="block{groupNumber}Pri2" name="newRegistration[block{groupNumber}Pri2]" value="{workshop.uid}" />
-						<f:if condition="{workshop.tooltip}">
-							<f:then>
-								<label title="{workshop.tooltip}">{workshop.title}</label><br />
-							</f:then>
-							<f:else>
-								<label>{workshop.title}</label><br />
-							</f:else>
+					<f:for each="{workshopsOfBlock}" as="workshop" iteration="iterator">
+						<f:if condition="{iterator.isFirst}">
+							<h3 class="block{groupNumber}">Block {groupNumber},
+								<phzhres:secondsToTime seconds="{workshop.fromtime}"/>
+								-
+								<phzhres:secondsToTime seconds="{workshop.totime}"/>
+								<f:translate key="tx_phzhresregistration_domain_model_registration.text.timeformat"/>
+							</h3>
+							<div class="blocklegend">
+								<span class="tooltip"
+									  title='<f:translate key="tx_phzhresregistration_domain_model_registration.header.tooltip" />'><f:translate
+										key="tx_phzhresregistration_domain_model_registration.header"/></span>
+							</div>
 						</f:if>
 
-					</div>
+						<div class="block{groupNumber}Workshop">
 
-				</f:for>
+							<f:form.radio class="block{groupNumber}Pri1" name="newRegistration[block{groupNumber}Pri1]"
+										  value="{workshop.uid}"/>
+							<f:form.radio class="block{groupNumber}Pri2" name="newRegistration[block{groupNumber}Pri2]"
+										  value="{workshop.uid}"/>
+							<f:if condition="{workshop.tooltip}">
+								<f:then>
+									<label title="{workshop.tooltip}">{workshop.title}</label><br/>
+								</f:then>
+								<f:else>
+									<label>{workshop.title}</label><br/>
+								</f:else>
+							</f:if>
 
-			</div>
+						</div>
 
-		</f:groupedFor>
+					</f:for>
+
+				</div>
+
+			</f:groupedFor>
 
 		</div>
 
 	</div>
 	<div id="tabs-3" class="personalDataTab">
 		<div class="formfield">
-			<label for="salutation"><f:translate key="tx_phzhresregistration_domain_model_registration.salutation" /> <span class="required">*</span></label>
-			<f:form.select property="salutation" id="salutation" options="{0: '{f:translate(key:\"tx_phzhresregistration_domain_model_registration.salutation.female\")}',1: '{f:translate(key:\"tx_phzhresregistration_domain_model_registration.salutation.male\")}'}" />
+			<label for="salutation">
+				<f:translate key="tx_phzhresregistration_domain_model_registration.salutation"/>
+				<span class="required">*</span></label>
+			<f:form.select property="salutation" id="salutation" options="{0: '{f:translate(key:\"
+						   tx_phzhresregistration_domain_model_registration.salutation.female
+			\")}',1: '{f:translate(key:\"tx_phzhresregistration_domain_model_registration.salutation.male\")}'}" />
 		</div>
 
 		<div class="formfield">
-			<label for="firstname"><f:translate key="tx_phzhresregistration_domain_model_registration.firstname" /> <span class="required">*</span></label>
-			<f:form.textfield required="required" property="firstname" id="firstname" />
-		</div>
-
-        <div class="formfield">
-            <label for="lastname"><f:translate key="tx_phzhresregistration_domain_model_registration.lastname" /> <span class="required">*</span></label>
-            <f:form.textfield required="required" property="lastname" id="lastname" />
-        </div>
-
-        <div class="formfield">
-			<label for="address1"><f:translate key="tx_phzhresregistration_domain_model_registration.address1" /> <span class="required">*</span></label>
-			<f:form.textfield required="required" property="address1" id="address1" />
+			<label for="firstname">
+				<f:translate key="tx_phzhresregistration_domain_model_registration.firstname"/>
+				<span class="required">*</span></label>
+			<f:form.textfield required="required" property="firstname" id="firstname"/>
 		</div>
 
 		<div class="formfield">
-			<label for="address2"><f:translate key="tx_phzhresregistration_domain_model_registration.address2" /></label>
-			<f:form.textfield property="address2" id="address2" />
+			<label for="lastname">
+				<f:translate key="tx_phzhresregistration_domain_model_registration.lastname"/>
+				<span class="required">*</span></label>
+			<f:form.textfield required="required" property="lastname" id="lastname"/>
 		</div>
 
 		<div class="formfield">
-			<label for="zip"><f:translate key="tx_phzhresregistration_domain_model_registration.zip" /> <span class="required">*</span></label>
-			<f:form.textfield required="required" property="zip" id="zip" />
+			<label for="address1">
+				<f:translate key="tx_phzhresregistration_domain_model_registration.address1"/>
+				<span class="required">*</span></label>
+			<f:form.textfield required="required" property="address1" id="address1"/>
 		</div>
 
 		<div class="formfield">
-			<label for="city"><f:translate key="tx_phzhresregistration_domain_model_registration.city" /> <span class="required">*</span></label>
-			<f:form.textfield required="required" property="city" id="city" />
+			<label for="address2">
+				<f:translate key="tx_phzhresregistration_domain_model_registration.address2"/>
+			</label>
+			<f:form.textfield property="address2" id="address2"/>
 		</div>
 
 		<div class="formfield">
-			<label for="country"><f:translate key="tx_phzhresregistration_domain_model_registration.country" /> <span class="required">*</span></label>
-			<f:form.textfield required="required" property="country" id="country" />
+			<label for="zip">
+				<f:translate key="tx_phzhresregistration_domain_model_registration.zip"/>
+				<span class="required">*</span></label>
+			<f:form.textfield required="required" property="zip" id="zip"/>
 		</div>
 
 		<div class="formfield">
-			<label for="company"><f:translate key="tx_phzhresregistration_domain_model_registration.company" /></label>
-			<f:form.textfield property="company" id="company" />
+			<label for="city">
+				<f:translate key="tx_phzhresregistration_domain_model_registration.city"/>
+				<span class="required">*</span></label>
+			<f:form.textfield required="required" property="city" id="city"/>
 		</div>
 
 		<div class="formfield">
-			<label for="phone"><f:translate key="tx_phzhresregistration_domain_model_registration.phone" /></label>
-			<f:form.textfield property="phone" id="phone" />
+			<label for="country">
+				<f:translate key="tx_phzhresregistration_domain_model_registration.country"/>
+				<span class="required">*</span></label>
+			<f:form.textfield required="required" property="country" id="country"/>
 		</div>
 
 		<div class="formfield">
-			<label for="email"><f:translate key="tx_phzhresregistration_domain_model_registration.email" /> <span class="required">*</span></label>
-			<f:form.textfield required="required" property="email" id="email" />
+			<label for="company">
+				<f:translate key="tx_phzhresregistration_domain_model_registration.company"/>
+			</label>
+			<f:form.textfield property="company" id="company"/>
 		</div>
 
 		<div class="formfield">
-			<label for="comment"><f:translate key="tx_phzhresregistration_domain_model_registration.comment" /></label>
-			<f:form.textarea rows="40" cols="15" property="comment" id="comment" />
-            <!-- 07.01.2014/mia: no marketplace in 2014! a id="marketplaceInformation" href="#"><phzhres:format.htmlentitiesDecode><f:translate key="tx_phzhresregistration_domain_model_registration.text.marketplaceInformationTitle" /></phzhres:format.htmlentitiesDecode></a-->
+			<label for="phone">
+				<f:translate key="tx_phzhresregistration_domain_model_registration.phone"/>
+			</label>
+			<f:form.textfield property="phone" id="phone"/>
 		</div>
 
-		<f:form.hidden name="newRegistration[userLanguage]" value="{userLanguage}" />
+		<div class="formfield">
+			<label for="email">
+				<f:translate key="tx_phzhresregistration_domain_model_registration.email"/>
+				<span class="required">*</span></label>
+			<f:form.textfield required="required" property="email" id="email"/>
+		</div>
+
+		<div class="formfield">
+			<label for="comment">
+				<f:translate key="tx_phzhresregistration_domain_model_registration.comment"/>
+			</label>
+			<f:form.textarea rows="40" cols="15" property="comment" id="comment"/>
+			<f:comment>
+				<!-- 07.01.2014/mia: no marketplace in 2014! a id="marketplaceInformation" href="#"><phzhres:format.htmlentitiesDecode><f:translate key="tx_phzhresregistration_domain_model_registration.text.marketplaceInformationTitle" /></phzhres:format.htmlentitiesDecode></a-->
+			</f:comment>
+		</div>
 
 	</div>
 	<div id="tabs-4">
 		<fieldset class="confirmation">
-			<legend><f:translate key="tx_phzhresregistration_domain_model_registration.tab.registrationtype" /></legend>
+			<legend>
+				<f:translate key="tx_phzhresregistration_domain_model_registration.tab.registrationtype"/>
+			</legend>
 			<span id="registrationTypePlaceholder"></span>
 		</fieldset>
 
 		<fieldset class="confirmation" id="confirmWorkshops">
-			<legend><f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops" /></legend>
+			<legend>
+				<f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops"/>
+			</legend>
 		</fieldset>
 
 		<fieldset class="confirmation">
-			<legend><f:translate key="tx_phzhresregistration_domain_model_registration.tab.personaldata" /></legend>
+			<legend>
+				<f:translate key="tx_phzhresregistration_domain_model_registration.tab.personaldata"/>
+			</legend>
 			<p>
-				<span id="salutationPlaceholder"></span><br />
-				<span id="firstnamePlaceholder"></span> <span id="lastnamePlaceholder"></span><br />
-				<span id="companyPlaceholder"></span><br />
-				<span id="address1Placeholder"></span><br />
-				<span id="address2Placeholder"></span><br />
-				<span id="zipPlaceholder"></span> <span id="cityPlaceholder"></span><br />
+				<span id="salutationPlaceholder"></span><br/>
+				<span id="firstnamePlaceholder"></span> <span id="lastnamePlaceholder"></span><br/>
+				<span id="companyPlaceholder"></span><br/>
+				<span id="address1Placeholder"></span><br/>
+				<span id="address2Placeholder"></span><br/>
+				<span id="zipPlaceholder"></span> <span id="cityPlaceholder"></span><br/>
 				<span id="countryPlaceholder"></span>
 			</p>
+
 			<p>
-				<span id="phonePlaceholder"></span><br />
+				<span id="phonePlaceholder"></span><br/>
 				<span id="emailPlaceholder"></span>
 			</p>
-			<p><strong><f:translate key="tx_phzhresregistration_domain_model_registration.comment" /></strong><br />
-			<span id="commentPlaceholder"></span>
+
+			<p><strong>
+				<f:translate key="tx_phzhresregistration_domain_model_registration.comment"/>
+			</strong><br/>
+				<span id="commentPlaceholder"></span>
 			</p>
 		</fieldset>
-		<f:form.submit id="formSubmit" value="{f:translate(key:'tx_phzhresregistration_domain_model_registration.submit')}" />
+		<f:form.submit id="formSubmit"
+					   value="{f:translate(key:'tx_phzhresregistration_domain_model_registration.submit')}"/>
 	</div>
 </div>
 
 
-
 <script type="text/javascript">
 
-    // see: Resources/Private/Partials/Registration/FormFileds.html
+// see: Resources/Private/Partials/Registration/FormFields.html
+$(function() {
 
-	$(function() {
+	// init tabs
+	$("#tabs").tabs({
 
-			// init tabs
-		$("#tabs").tabs({
+		// if last tab selected get all the form values for the confirmation page.
+		activate: function (event, ui) {
+			var currentTab = $tabs.tabs('option', 'active');
+			//console.log('tab:'+currentTab+' = '+ui.newTab);
+			if (currentTab == 3) {
 
-            // if last tab selected get all the form values for the confirmation page.
-            activate : function(event, ui){
-                var currentTab = $tabs.tabs('option', 'active');
-                //console.log('tab:'+currentTab+' = '+ui.newTab);
-                if (currentTab == 3) {
+				// preview personal data
+				$('form#newRegistration :input').each(function () {
 
-                    // preview personal data
-                    $('form#newRegistration :input').each(function() {
+					var elementId = $(this).attr('id');
+					// skip formfield without id
+					if (typeof elementId === 'undefined') {
+						return true;
+					}
 
-                        var elementId = $(this).attr('id');
-                        // skip formfield without id
-                        if(typeof elementId === 'undefined') { return true; }
+					var elementValue = $(this).val();
+					var targetElement = '#' + elementId + 'Placeholder';
+					//console.log('formpreview:'+elementId+' = '+elementValue)
 
-                        var elementValue = $(this).val();
-                        var targetElement = '#' + elementId + 'Placeholder';
-                        //console.log('formpreview:'+elementId+' = '+elementValue)
+					if ($(this).is("select")) {
+						var selectedOption = '#' + elementId + ' option:selected';
+						$(targetElement).html($(selectedOption).html());
+					} else {
+						$(targetElement).html(elementValue);
+					}
+				});
 
-                        if ($(this).is("select")) {
-                            var selectedOption = '#' + elementId + ' option:selected';
-                            $(targetElement).html($(selectedOption).html());
-                        } else {
-                            $(targetElement).html(elementValue);
-                        }
-                    });
+				// preview selected worksops and prepend fieldset legend
+				$('#confirmWorkshops').html('<legend><f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops" /></legend>');
+				//console.log('---- activated summary ----');
 
-                    // preview selected worksops and prepend fieldset legend
-                    $('#confirmWorkshops').html('<legend><f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops" /></legend>');
-                    //console.log('---- activated summary ----');
+				$('#selectWorkshops').find('.block').each(function () {
 
-                    $('#selectWorkshops .block').each(function() {
+					var blockId = $(this).attr('id');
 
-                        var blockId= $(this).attr('id');
+					var blockTitle = $('#' + blockId + ' h3').html();
+					//console.log('------------- block:'+blockId+' = '+blockTitle);
 
-                        var blockTitle = $('#'+blockId+' h3').html();
-                        //console.log('------------- block:'+blockId+' = '+blockTitle);
+					var $Pri1 = $('input.' + blockId + 'Pri1:checked');
+					var labelPrio1 = $('label', $Pri1.parent()).html();
 
-                        var $Pri1 = $('input.'+blockId+'Pri1:checked');
-                        var labelPrio1 = $('label', $Pri1.parent()).html();
+					var $Pri2 = $('input.' + blockId + 'Pri2:checked');
+					var labelPrio2 = $('label', $Pri2.parent()).html();
 
-                        var $Pri2 = $('input.'+blockId+'Pri2:checked');
-                        var labelPrio2 = $('label', $Pri2.parent()).html();
+					//console.log('prio1: '+$Pri1.val()+' = '+labelPrio1)
+					//console.log('prio2: '+$Pri2.val()+' = '+labelPrio2)
 
-                        //console.log('prio1: '+$Pri1.val()+' = '+labelPrio1)
-                        //console.log('prio2: '+$Pri2.val()+' = '+labelPrio2)
+					//$('#confirmWorkshops').append('<h4>' + $(this).html() + '</h4>');
+					var $confirmWorkshops = $('#confirmWorkshops');
+					$confirmWorkshops.append('<h4>' + blockTitle + '</h4>');
+					$confirmWorkshops.append($('#textPri1').html());
+					//$('#confirmWorkshops').append(labelPrio1);
+					$confirmWorkshops.append('<span id="' + blockId + 'Pri1Placeholder">' + labelPrio1 + '</span><br />')
+					$confirmWorkshops.append($('#textPri2').html());
+					//$('#confirmWorkshops').append(labelPrio2);
+					$confirmWorkshops.append('<span id="' + blockId + 'Pri2Placeholder">' + labelPrio2 + '</span>')
 
-                        //$('#confirmWorkshops').append('<h4>' + $(this).html() + '</h4>');
-                        $('#confirmWorkshops').append('<h4>'+blockTitle+'</h4>');
-                        $('#confirmWorkshops').append($('#textPri1').html());
-                        //$('#confirmWorkshops').append(labelPrio1);
-                        $('#confirmWorkshops').append('<span id="' + blockId + 'Pri1Placeholder">'+labelPrio1+'</span><br />')
-                        $('#confirmWorkshops').append($('#textPri2').html());
-                        //$('#confirmWorkshops').append(labelPrio2);
-                        $('#confirmWorkshops').append('<span id="' + blockId + 'Pri2Placeholder">'+labelPrio2+'</span>')
-
-                    });
+				});
 
 
-                }
+			}
 
-            },
-		    select: function(event, ui) {
-				var isValid = false;
-				var currentTab = $tabs.tabs('option', 'selected');
-				var clickedTab = ui.index;
+		},
+		select: function (event, ui) {
+			var isValid = false;
+			var currentTab = $tabs.tabs('option', 'selected');
+			var clickedTab = ui.index;
 
-				if (currentTab == 0) {
+			if (currentTab == 0) {
+				isValid = true;
+			}
+
+			if (currentTab == 1) {
+				var errorCount = 0;
+
+				$('#selectWorkshops').find(':radio').each(function () {
+
+					// blockX
+					// 07.01.2014/mia: look for atr(id) instead of class now
+					var parentElementClass = $(this).parent().parent().attr('id');
+					var pri1ValueSelector = 'input.' + parentElementClass + 'Pri1:checked';
+					if (typeof $(pri1ValueSelector).val() == 'undefined') {
+						errorCount++;
+					}
+					var pri2ValueSelector = 'input.' + parentElementClass + 'Pri2:checked';
+					if (typeof $(pri2ValueSelector).val() == 'undefined') {
+						errorCount++;
+					}
+				});
+
+
+				if (errorCount === 0) {
 					isValid = true;
-				}
-
-				if (currentTab == 1) {
-					var errorCount = 0;
-
-					$('#selectWorkshops :radio').each(function(){
-
-							// blockX
-                            // 07.01.2014/mia: look for atr(id) instead of class now
-						var parentElementClass = $(this).parent().parent().attr('id');
-						var pri1ValueSelector = 'input.' + parentElementClass + 'Pri1:checked';
-						if (typeof $(pri1ValueSelector).val() == 'undefined') {
-							errorCount = errorCount + 1;
-						}
-						var pri2ValueSelector = 'input.' + parentElementClass + 'Pri2:checked';
-						if (typeof $(pri2ValueSelector).val() == 'undefined') {
-							errorCount = errorCount + 1;
+				} else {
+					$('#workshopsNotSelectedError').dialog({
+						//position: { my:"center+100", at:"top+200", of: window },
+						position: { my: "center", at: "top+200", of: window },
+						modal: true,
+						//title: "Fehler - Workshop-Auswahl",
+						buttons: {
+							OK: function () {
+								$(this).dialog("close");
+							}
 						}
 					});
 
+				}
+			}
 
-					if (errorCount === 0) {
-						isValid = true;
-					} else {
-						$('#workshopsNotSelectedError').dialog({
-                            //position: { my:"center+100", at:"top+200", of: window },
-                            position: { my:"center", at:"top+200", of: window },
+			if (currentTab == 2) {
+				var requiredElements = ["firstname", "lastname", "address1", "zip", "city", "country", "email"];
+				var errorCount = 0;
+				$('.personalDataTab input').each(function () {
+					var elementId = $(this).attr('id');
+					$(this).removeClass('validationFailed');
+					if (($.inArray(elementId, requiredElements) > -1) && ($(this).val().length === 0)) {
+						errorCount++;
+						$(this).addClass('validationFailed');
+						$('#personalDataError').dialog({
 							modal: true,
-							//title: "Fehler - Workshop-Auswahl",
+							//title: "Fehler",
 							buttons: {
-								OK: function() {
+								OK: function () {
 									$(this).dialog("close");
 								}
 							}
 						});
-
+						return false;
 					}
-				}
-
-				if (currentTab == 2) {
-					var requiredElements = ["firstname", "lastname", "address1", "zip", "city", "country", "email"];
-					var errorCount = 0;
-					$('.personalDataTab input').each(function(){
-						var elementId = $(this).attr('id');
-						$(this).removeClass('validationFailed');
-						if (($.inArray(elementId, requiredElements) > -1) && ($(this).val().length === 0)) {
-							errorCount = errorCount + 1;
-							$(this).addClass('validationFailed');
-							$('#personalDataError').dialog({
-								modal: true,
-								//title: "Fehler",
-								buttons: {
-									OK: function() {
-										$(this).dialog("close");
-									}
-								}
-							});
-                            return false;
-						}
-					})
-					if (errorCount === 0) {
-						isValid = true;
-					}
-
-				}
-
-				if (currentTab == 3) {
+				});
+				if (errorCount === 0) {
 					isValid = true;
 				}
 
-				return isValid;
-    		}
-
-		});
-
-		var $tabs = $('#tabs').tabs();
-
-			// add previous/next buttons to tabs
-            // 07.01.2014/mia: removed id="nextButton" / id="prevButton" from buttons. not needed and multiple use of same id (for each tab) not valid!
-		$(".ui-tabs-panel").each(function(i){
-			var totalSize = $(".ui-tabs-panel").size() - 1;
-
-			if (i != 0) {
-			  prev = i;
-				var prevButtonText = $('#prevButtonText').text();
-				$(this).append('<a href="#" class="prev-tab mover" rel="' + prev + '">' + prevButtonText + '</a>');
-			}
-			
-			if (i != totalSize) {
-			  next = i + 2;
-				var nextButtonText = $('#nextButtonText').text();
-				  $(this).append('<a href="#" class="next-tab mover" rel="' + next + '">' + nextButtonText + '</a>');
-
 			}
 
-		});
-
-		$('.next-tab, .prev-tab').click(function() {
-			$tabs.tabs('select', $(this).attr("rel"));
-			return false;
-		});
-
-			// setup the confirmation fieldsets by reading out existing data
-		$('#registrationTypePlaceholder').html($('#registrationType option:selected').html());
-		$('#salutationPlaceholder').html($('#salutation option:selected').html());
-
-		/*$('#selectWorkshops h3').each(function() {
-			$('#confirmWorkshops').append('<h4>' + $(this).html() + '</h4>');
-			var blockId= $(this).attr('class');
-			$('#confirmWorkshops').append($('#textPri1').html());
-			$('#confirmWorkshops').append('<span id="' + blockId + 'Pri1Placeholder"></span><br />')
-			$('#confirmWorkshops').append($('#textPri2').html());
-			$('#confirmWorkshops').append('<span id="' + blockId + 'Pri2Placeholder"></span>')
-		});*/
-
-			// observe form changes and display it on confirmation page
-        /* 07.01.2014/mia: see activate event
-		$('form#newRegistration :input').change(function(ui) {
-
-			var elementId = $(this).attr('id');
-			var elementValue = $(this).val();
-			var targetElement = '#' + elementId + 'Placeholder';
-
-            console.log('formobserver:'+elementId)
-
-			if ($(this).is("select")) {
-				var selectedOption = '#' + elementId + ' option:selected';
-				$(targetElement).html($(selectedOption).html());
-			} else {
-				$(targetElement).html(elementValue);
+			if (currentTab == 3) {
+				isValid = true;
 			}
-		});*/
 
-			// observe workshop selection change
-		$('#selectWorkshops :radio').change(function() {
+			return isValid;
+		}
 
-			var parentElement = $(this).parent();
+	});
 
-				// make sure there are no equal workshops selected
-			var parentElementClass = $(parentElement).parent().attr('id');
+	var $tabs = $('#tabs').tabs();
 
-            //console.log('changeradio:'+parentElementClass)
+	// add previous/next buttons to tabs
+	// 07.01.2014/mia: removed id="nextButton" / id="prevButton" from buttons. not needed and multiple use of same id (for each tab) not valid!
+	$(".ui-tabs-panel").each(function (i) {
+		var totalSize = $(".ui-tabs-panel").size() - 1;
 
-			var pri1ValueSelector = 'input.' + parentElementClass + 'Pri1:checked';
-			var pri1Value = $(pri1ValueSelector).val();
+		if (i != 0) {
+			prev = i;
+			var prevButtonText = $('#prevButtonText').text();
+			$(this).append('<a href="#" class="prev-tab mover" rel="' + prev + '">' + prevButtonText + '</a>');
+		}
 
-			var pri2ValueSelector = 'input.' + parentElementClass + 'Pri2:checked';
-			var pri2Value = $(pri2ValueSelector).val();
+		if (i != totalSize) {
+			next = i + 2;
+			var nextButtonText = $('#nextButtonText').text();
+			$(this).append('<a href="#" class="next-tab mover" rel="' + next + '">' + nextButtonText + '</a>');
 
-            //console.log('pri1Value:'+pri1Value)
-            //console.log('pri2Value:'+pri2Value)
+		}
 
-            if (pri1Value == pri2Value) {
-                //console.log('achtung: p1=p2')
-				$('#workshopSelectionError').dialog({
-					modal: true,
-					//title: "Fehler",
-					buttons: {
-						OK: function() {
-							$(this).dialog("close");
-						}
+	});
+
+	$('.next-tab, .prev-tab').click(function () {
+		$tabs.tabs('select', $(this).attr("rel"));
+		return false;
+	});
+
+	// setup the confirmation fieldsets by reading out existing data
+	$('#registrationTypePlaceholder').html($('#registrationType').find('option:selected').html());
+	$('#salutationPlaceholder').html($('#salutation').find('option:selected').html());
+
+	/*$('#selectWorkshops h3').each(function() {
+	 $('#confirmWorkshops').append('<h4>' + $(this).html() + '</h4>');
+	 var blockId= $(this).attr('class');
+	 $('#confirmWorkshops').append($('#textPri1').html());
+	 $('#confirmWorkshops').append('<span id="' + blockId + 'Pri1Placeholder"></span><br />')
+	 $('#confirmWorkshops').append($('#textPri2').html());
+	 $('#confirmWorkshops').append('<span id="' + blockId + 'Pri2Placeholder"></span>')
+	 });*/
+
+	// observe form changes and display it on confirmation page
+	/* 07.01.2014/mia: see activate event
+	 $('form#newRegistration :input').change(function(ui) {
+
+	 var elementId = $(this).attr('id');
+	 var elementValue = $(this).val();
+	 var targetElement = '#' + elementId + 'Placeholder';
+
+	 console.log('formobserver:'+elementId)
+
+	 if ($(this).is("select")) {
+	 var selectedOption = '#' + elementId + ' option:selected';
+	 $(targetElement).html($(selectedOption).html());
+	 } else {
+	 $(targetElement).html(elementValue);
+	 }
+	 });*/
+
+	// observe workshop selection change
+	$('#selectWorkshops').find(':radio').change(function () {
+
+		var parentElement = $(this).parent();
+
+		// make sure there are no equal workshops selected
+		var parentElementClass = $(parentElement).parent().attr('id');
+
+		//console.log('changeradio:'+parentElementClass)
+
+		var pri1ValueSelector = 'input.' + parentElementClass + 'Pri1:checked';
+		var pri1Value = $(pri1ValueSelector).val();
+
+		var pri2ValueSelector = 'input.' + parentElementClass + 'Pri2:checked';
+		var pri2Value = $(pri2ValueSelector).val();
+
+		//console.log('pri1Value:'+pri1Value)
+		//console.log('pri2Value:'+pri2Value)
+
+		if (pri1Value == pri2Value) {
+			//console.log('achtung: p1=p2')
+			$('#workshopSelectionError').dialog({
+				modal: true,
+				//title: "Fehler",
+				buttons: {
+					OK: function () {
+						$(this).dialog("close");
 					}
-				});
-				$(this).removeAttr("checked");
-			}
+				}
+			});
+			$(this).removeAttr("checked");
+		}
 
-		});
+	});
 
-			// special styling for workshops of type "market place"
-        /** 07.01.2014/mia: not needed in 2014. and not working since lables are no longer starting with "Mark..."
-		$('#selectWorkshops :radio').each(function() {
+	// special styling for workshops of type "market place"
+	/** 07.01.2014/mia: not needed in 2014. and not working since lables are no longer starting with "Mark..."
+	 $('#selectWorkshops :radio').each(function() {
 			var workshopLabel = $('label', $(this).parent());
 			var firstFourLetters = workshopLabel.text().substring(0,4);
 			if (firstFourLetters == 'Mark') {
@@ -402,97 +460,124 @@
 			}
 		});
 
-			// insert market place information text
-		$('.block1 div[lang="marketplace"] :first').parent().before($('#marketplaceBlock1Toggler').html());
-		$('.block2 div[lang="marketplace"] :first').parent().before($('#marketplaceBlock2Toggler').html());
-		$('.block3 div[lang="marketplace"] :first').parent().before($('#marketplaceBlock3Toggler').html());
-         */
+	 // insert market place information text
+	 $('.block1 div[lang="marketplace"] :first').parent().before($('#marketplaceBlock1Toggler').html());
+	 $('.block2 div[lang="marketplace"] :first').parent().before($('#marketplaceBlock2Toggler').html());
+	 $('.block3 div[lang="marketplace"] :first').parent().before($('#marketplaceBlock3Toggler').html());
+	 */
 
-			// check for valid company mail addresses
-		$('#email').change(function() {
-			var registrationTypesToCheck = [2, 3, 4];
-			var registrationType = parseInt($('#registrationType').val());
+		// check for valid company mail addresses
+	$('#email').change(function () {
+		var registrationTypesToCheck = [2, 3, 4];
+		var registrationType = parseInt($('#registrationType').val());
 
-			if ($.inArray(registrationType, registrationTypesToCheck) > -1) {
+		if ($.inArray(registrationType, registrationTypesToCheck) > -1) {
 
-				var mailAddress = $(this).val();
-				var splittedMailAddress = mailAddress.split('@');
-				var mailDomain = splittedMailAddress[1];
+			var mailAddress = $(this).val();
+			var splittedMailAddress = mailAddress.split('@');
+			var mailDomain = splittedMailAddress[1];
 
-				// 07.01.2014/mia: still allow phz just in case...
-				var allowedDomains = ['phlu.ch','stud.phlu.ch','phz.ch', 'stud.phz.ch', 'stud.hslu.ch', 'unilu.ch'];
+			// 07.01.2014/mia: still allow phz just in case...
+			var allowedDomains = ['phlu.ch', 'stud.phlu.ch', 'phz.ch', 'stud.phz.ch', 'stud.hslu.ch', 'unilu.ch'];
 
-				if ($.inArray(mailDomain, allowedDomains) == -1) {
+			if ($.inArray(mailDomain, allowedDomains) == -1) {
 
-					$('#companyMailError').dialog({
-						modal: true,
-						//title: "Fehler",
-						buttons: {
-							OK: function() {
-								$(this).dialog("close");
-							}
+				$('#companyMailError').dialog({
+					modal: true,
+					//title: "Fehler",
+					buttons: {
+						OK: function () {
+							$(this).dialog("close");
 						}
-					});
-					$(this).val('');
-				}
+					}
+				});
+				$(this).val('');
 			}
-
-		});
-
-		// activate tooltips
-        /* 07.01.2014/mia: no more tooltips on elements with title-tag other than imgsince we have dialog divs with such
-		$('[title]').qtip({ style: { name: 'cream', tip: true } })*/
-		$('.tooltip').qtip({ style: { name: 'cream', tip: true } })
-
-        //http://craigsworks.com/projects/qtip/features#position
-
-		var marketplaceInformationContent = $('#marketplaceInformationContent');
-		$('#marketplaceInformation').qtip({
-			content: marketplaceInformationContent,
-			show: 'mouseover',
-			hide: 'fixed',
-			style: {
-				name: 'cream',
-				tip: true
-			},
-			position: {
-				corner: {
-					target: 'leftBottom',
-					tooltip: 'topLeft'
-				}
-			}
-		})
+		}
 
 	});
+
+	// activate tooltips
+	/* 07.01.2014/mia: no more tooltips on elements with title-tag other than imgsince we have dialog divs with such
+	 $('[title]').qtip({ style: { name: 'cream', tip: true } })*/
+	$('.tooltip').qtip({ style: { name: 'cream', tip: true } })
+
+	//http://craigsworks.com/projects/qtip/features#position
+
+	var marketplaceInformationContent = $('#marketplaceInformationContent');
+	$('#marketplaceInformation').qtip({
+		content: marketplaceInformationContent,
+		show: 'mouseover',
+		hide: 'fixed',
+		style: {
+			name: 'cream',
+			tip: true
+		},
+		position: {
+			corner: {
+				target: 'leftBottom',
+				tooltip: 'topLeft'
+			}
+		}
+	})
+
+});
 </script>
 
-<div class="hiddenContent" id="companyMailError" title='E-Mail'><f:translate key="tx_phzhresregistration_domain_model_registration.error.companyMailError" /></div>
-<div class="hiddenContent" id="workshopSelectionError" title='<f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops" />'><f:translate key="tx_phzhresregistration_domain_model_registration.error.workshopSelectionError" /></div>
-<div class="hiddenContent" id="personalDataError" title='<f:translate key="tx_phzhresregistration_domain_model_registration.tab.personaldata" />'><f:translate key="tx_phzhresregistration_domain_model_registration.error.personalDataError" /></div>
-<div class="hiddenContent" id="workshopsNotSelectedError" title='<f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops" />'><f:translate key="tx_phzhresregistration_domain_model_registration.error.workshopsNotSelectedError" /></div>
+<div class="hiddenContent" id="companyMailError" title='E-Mail'>
+	<f:translate key="tx_phzhresregistration_domain_model_registration.error.companyMailError"/>
+</div>
+<div class="hiddenContent" id="workshopSelectionError"
+	 title='<f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops" />'>
+	<f:translate key="tx_phzhresregistration_domain_model_registration.error.workshopSelectionError"/>
+</div>
+<div class="hiddenContent" id="personalDataError"
+	 title='<f:translate key="tx_phzhresregistration_domain_model_registration.tab.personaldata" />'>
+	<f:translate key="tx_phzhresregistration_domain_model_registration.error.personalDataError"/>
+</div>
+<div class="hiddenContent" id="workshopsNotSelectedError"
+	 title='<f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops" />'>
+	<f:translate key="tx_phzhresregistration_domain_model_registration.error.workshopsNotSelectedError"/>
+</div>
 
-<div class="hiddenContent" id="textPri1"><f:translate key="tx_phzhresregistration_domain_model_registration.pri1" />:&nbsp;</div>
-<div class="hiddenContent" id="textPri2"><f:translate key="tx_phzhresregistration_domain_model_registration.pri2" />:&nbsp;</div>
+<div class="hiddenContent" id="textPri1">
+	<f:translate key="tx_phzhresregistration_domain_model_registration.pri1"/>
+	:&nbsp;</div>
+<div class="hiddenContent" id="textPri2">
+	<f:translate key="tx_phzhresregistration_domain_model_registration.pri2"/>
+	:&nbsp;</div>
 
-<div class="hiddenContent" id="prevButtonText"><f:translate key="tx_phzhresregistration_domain_model_registration.text.prevButton" /></div>
-<div class="hiddenContent" id="nextButtonText"><f:translate key="tx_phzhresregistration_domain_model_registration.text.nextButton" /></div>
+<div class="hiddenContent" id="prevButtonText">
+	<f:translate key="tx_phzhresregistration_domain_model_registration.text.prevButton"/>
+</div>
+<div class="hiddenContent" id="nextButtonText">
+	<f:translate key="tx_phzhresregistration_domain_model_registration.text.nextButton"/>
+</div>
 
 <div class="hiddenContent" id="marketplaceBlock1Toggler">
-	<p><a class="marketplaceToggler" title="{f:translate(key:'tx_phzhresregistration_domain_model_registration.text.marketplaceTooltip')}" href="#" onclick="$('.block1 [lang=marketplace]').toggle('slow');">
-		<f:translate key="tx_phzhresregistration_domain_model_registration.text.marketplaceWorkshops" /> &raquo;
+	<p><a class="marketplaceToggler"
+		  title="{f:translate(key:'tx_phzhresregistration_domain_model_registration.text.marketplaceTooltip')}" href="#"
+		  onclick="$('.block1 [lang=marketplace]').toggle('slow');">
+		<f:translate key="tx_phzhresregistration_domain_model_registration.text.marketplaceWorkshops"/> &raquo;
 	</a></p>
 </div>
 <div class="hiddenContent" id="marketplaceBlock2Toggler">
-	<p><a class="marketplaceToggler" title="{f:translate(key:'tx_phzhresregistration_domain_model_registration.text.marketplaceTooltip')}" href="#" onclick="$('.block2 [lang=marketplace]').toggle('slow');">
-		<f:translate key="tx_phzhresregistration_domain_model_registration.text.marketplaceWorkshops" /> &raquo;
+	<p><a class="marketplaceToggler"
+		  title="{f:translate(key:'tx_phzhresregistration_domain_model_registration.text.marketplaceTooltip')}" href="#"
+		  onclick="$('.block2 [lang=marketplace]').toggle('slow');">
+		<f:translate key="tx_phzhresregistration_domain_model_registration.text.marketplaceWorkshops"/> &raquo;
 	</a></p>
 </div>
 <div class="hiddenContent" id="marketplaceBlock3Toggler">
-	<p><a class="marketplaceToggler" title="{f:translate(key:'tx_phzhresregistration_domain_model_registration.text.marketplaceTooltip')}" href="#" onclick="$('.block3 [lang=marketplace]').toggle('slow');">
-		<f:translate key="tx_phzhresregistration_domain_model_registration.text.marketplaceWorkshops" /> &raquo;
+	<p><a class="marketplaceToggler"
+		  title="{f:translate(key:'tx_phzhresregistration_domain_model_registration.text.marketplaceTooltip')}" href="#"
+		  onclick="$('.block3 [lang=marketplace]').toggle('slow');">
+		<f:translate key="tx_phzhresregistration_domain_model_registration.text.marketplaceWorkshops"/> &raquo;
 	</a></p>
 </div>
 
 <div class="hiddenContent" id="marketplaceInformationContent">
-	<phzhres:format.htmlentitiesDecode><f:translate key="tx_phzhresregistration_domain_model_registration.text.marketplaceInformationTooltip" /></phzhres:format.htmlentitiesDecode>
+	<phzhres:format.htmlentitiesDecode>
+		<f:translate key="tx_phzhresregistration_domain_model_registration.text.marketplaceInformationTooltip"/>
+	</phzhres:format.htmlentitiesDecode>
 </div>
