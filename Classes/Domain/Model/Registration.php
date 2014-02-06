@@ -214,7 +214,6 @@ class Tx_PhzHresregistration_Domain_Model_Registration extends Tx_Extbase_Domain
 	 * User language
 	 *
 	 * @var integer
-	 * @validate NotEmpty
 	 */
 	protected $userLanguage;
 

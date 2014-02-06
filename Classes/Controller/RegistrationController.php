@@ -160,8 +160,6 @@ class Tx_PhzHresregistration_Controller_RegistrationController extends Tx_PhzHre
 	public function newAction(Tx_PhzHresregistration_Domain_Model_Registration $newRegistration = NULL) {
 		$registrationTypes = $this->registrationTypeRepository->findAll();
 		$workshops = $this->workshopRepository->findAll();
-		$userLanguage = (int)$GLOBALS['TSFE']->sys_language_uid;
-		$this->view->assign('userLanguage', $userLanguage);
 		$this->view->assign('registrationTypes', $registrationTypes);
 		$this->view->assign('workshops', $workshops);
 		$this->view->assign('newRegistration', $newRegistration);
@@ -175,9 +173,10 @@ class Tx_PhzHresregistration_Controller_RegistrationController extends Tx_PhzHre
 	 */
 	public function createAction(Tx_PhzHresregistration_Domain_Model_Registration $newRegistration) {
 
+		$userLanguage = (int)$GLOBALS['TSFE']->sys_language_uid;
+		$newRegistration->setUserLanguage($userLanguage);
 		$this->registrationRepository->add($newRegistration);
 
-		$userLanguage = (int)$GLOBALS['TSFE']->sys_language_uid;
 		if ($userLanguage === 0) {
 			// german
 			$sender = array($this->settings['mailSender'] => 'Fachtagung Menschenrechtsbildung (HRES)');
@@ -197,7 +196,9 @@ class Tx_PhzHresregistration_Controller_RegistrationController extends Tx_PhzHre
 		$templateName = 'ConfirmationMail';
 
 		$this->sendTemplateEmail($recipient, $sender, $cc, $subject, $templateName, array('newRegistration' => $newRegistration));
+
 		$this->redirect('list');
+
 	}
 
 	/**
