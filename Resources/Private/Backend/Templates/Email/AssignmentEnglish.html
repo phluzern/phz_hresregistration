@@ -1,0 +1,142 @@
+{namespace phzhres=Tx_PhzHresregistration_ViewHelpers}
+
+<phzhres:format.htmlentitiesDecode>
+	<style type="text/css">
+	<!--
+		p, table { font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+		th.header { background-color: #00578E; color: #fff; }
+		th { text-align: left; vertical-align: top; }
+	-->
+	</style>
+
+	<f:if condition="{registration.salutation} == 0">
+		<f:then>
+			<p>Dear Ms. {registration.lastname}</p>
+		</f:then>
+		<f:else>
+			<p>Dear Mr. {registration.lastname}</p>
+		</f:else>
+	</f:if>
+
+	<p>On April 28th 2012 the <strong>Human Rights Education Symposium Lucerne</strong> on the topic <strong>“Educational Materials of Human Rights Education”</strong> will take place. During this day human rights education will be at the centre of attention. We are pleased that people from different backgrounds have signed up for the symposium, since this promises exciting discussions and an exchange of experience and knowledge.</p>
+	<p>In order to punctually begin the symposium and to ensure an efficient entrance procedure, we would be grateful if you arrive on time at the University/PHZ building in Lucerne (Doors open at 8.45 a.m.). Please bring along this printed e-mail, as it is required to gain admission to the symposium.</p>
+	<p>Below you will find your schedule for the three workshop rounds as well as a map to the symposium building, located at Frohburgstrasse 3, directly next to the KKL and the train station. The program of the symposium can be found at <a href="http://www.hres.phz.ch">www.hres.phz.ch</a>. If you have any questions feel free to contact us at <a href="mailto:info@hres.phz.ch">info@hres.phz.ch</a>.</p>
+	<p>Thank you for taking notice of this information. We look forward to greeting you at the <strong>Human Rights Education Symposium Lucerne</strong>.</p>
+
+	<p>Sincerely</p>
+	<table width="70%">
+		<tr>
+			<td>Thomas Kirchschläger<br />Co-Director ZMRB</td>
+			<td>Dr. Peter G. Kirchschläger<br />Co-Director ZMRB</td>
+		</tr>
+		<tr>
+			<td>Lukas Tobler<br />Responsible for Human Rights Education Symposium</td>
+			<td>Nadia Nicolet<br />Head of the StudentTeam 2012</td>
+		</tr>
+	</table>
+
+	<p>
+	<strong>Information:</strong><br />
+	Human Rights Education Symposium Lucerne (HRES)<br />
+	PHZ Lucerne<br />
+	Sentimatt 1<br />
+	CH-6003 Lucerne<br />
+	Switzerland<br />
+	phone +41 (0)41 228 47 30<br />
+	fax +41 (0)41 228 47 31<br />
+	e-Mail <a href="mailto:info@hres.phz.ch">info@hres.phz.ch</a><br />
+	<a href="http://www.hres.phz.ch">www.hres.phz.ch</a>
+	</p>
+
+	<p><strong>Ihr Symposium Pass:</strong></h3>
+	<table>
+		<tbody>
+			<tr>
+				<th class="header" colspan="2">
+					Type of Registration
+				</th>
+			</tr>
+			<tr>
+				<td colspan="2">
+					{registrationType.caption}
+				</td>
+			</tr>
+			<tr>
+				<th class="header" colspan="2">
+					Your Workshop Schedule
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<strong>Round 1, 10:30-11:45</strong>
+				</td>
+				<td>
+					{block1Workshop.title}, {block1Workshop.speaker}, {block1Workshop.room}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>Round 2, 13:15-14:30</strong>
+				</td>
+				<td>
+					{block2Workshop.title}, {block2Workshop.speaker}, {block2Workshop.room}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>Round 3, 15:00-16:15</strong>
+				</td>
+				<td>
+					{block3Workshop.title}, {block3Workshop.speaker}, {block3Workshop.room}
+				</td>
+			</tr>
+			<tr>
+				<th class="header" colspan="2">
+					Personal data
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<strong>Salutation</strong>
+				</td>
+				<td>
+					<f:if condition="{registration.salutation} == 0">
+						<f:then>
+							Ms.
+						</f:then>
+						<f:else>
+							Mr.
+						</f:else>
+					</f:if>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>Surname</strong>
+				</td>
+				<td>
+					{registration.lastName}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>Name</strong>
+				</td>
+				<td>
+					{registration.firstName}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>E-Mail</strong>
+				</td>
+				<td>
+					{registration.email}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<img border="1" src="{embeddedPicture}" />
+
+</phzhres:format.htmlentitiesDecode>

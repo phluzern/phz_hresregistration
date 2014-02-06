@@ -1,0 +1,25 @@
+<f:layout name="Default" />
+
+<f:section name="content">
+<h1>Bestätigungs-E-Mail</h1>
+
+<f:flashMessages />
+
+<h3><f:count>{registrations}</f:count> eingeteilte Teilnehmende haben noch keine Einteilungs-E-Mail erhalten.</h3>
+
+<p>Als eingeteilte Teilnehmende gelten Teilnehmende, die in jedem Block einem Workshop zugeteilt sind. Es spielt keine Rolle,
+	ob sie bereits bezahlt haben oder nicht.</p>
+
+<hr />
+
+<ul>
+<f:for each="{registrations}" as="registration">
+	<li>{registration.lastname}, {registration.firstname}</li>
+</f:for>
+</ul>
+
+<hr />
+
+
+<f:link.action action="sendConfirmationMail">Bestätigungs-E-Mail senden</f:link.action>
+</f:section>

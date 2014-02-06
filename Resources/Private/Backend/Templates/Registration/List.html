@@ -1,0 +1,63 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Registration</h1>
+
+<f:flashMessages />
+
+<table  class="tx_phzhresregistration" >
+	<tr>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.salutation" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.lastname" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.firstname" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.address1" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.address2" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.zip" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.city" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.country" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.company" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.phone" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.email" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.comment" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.paid" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_registration.assignment_sent" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{registrations}" as="registration">
+		<tr>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.salutation}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.lastname}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.firstname}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.address1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.address2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.zip}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.city}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.country}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.company}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.phone}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.email}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.comment}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.paid}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{registration : registration}"> {registration.assignmentSent}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{registration : registration}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{registration : registration}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Registration</f:link.action>
+</f:section>

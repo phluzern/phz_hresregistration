@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'phz_hresregistration'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_phzhresregistration_domain_model_registration">Registration</label>
+			<label index="tx_phzhresregistration_domain_model_registration.salutation">Salutation</label>
+			<label index="tx_phzhresregistration_domain_model_registration.lastname">Lastname</label>
+			<label index="tx_phzhresregistration_domain_model_registration.firstname">Firstname</label>
+			<label index="tx_phzhresregistration_domain_model_registration.address1">Address1</label>
+			<label index="tx_phzhresregistration_domain_model_registration.address2">Address2</label>
+			<label index="tx_phzhresregistration_domain_model_registration.zip">Zip</label>
+			<label index="tx_phzhresregistration_domain_model_registration.city">City</label>
+			<label index="tx_phzhresregistration_domain_model_registration.country">Country</label>
+			<label index="tx_phzhresregistration_domain_model_registration.company">Company</label>
+			<label index="tx_phzhresregistration_domain_model_registration.phone">Phone</label>
+			<label index="tx_phzhresregistration_domain_model_registration.email">Email</label>
+			<label index="tx_phzhresregistration_domain_model_registration.comment">Comment</label>
+			<label index="tx_phzhresregistration_domain_model_registration.paid">Paid</label>
+			<label index="tx_phzhresregistration_domain_model_registration.assignment_sent">Assignment Sent</label>
+			<label index="tx_phzhresregistration_domain_model_registration.registration_type">Registration Type</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_pri1">Block1 Pri1</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_pri2">Block1 Pri2</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_pri1">Block2 Pri1</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_pri2">Block2 Pri2</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_pri1">Block3 Pri1</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_pri2">Block3 Pri2</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_workshop">Block1 Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_workshop">Block2 Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_workshop">Block3 Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block_workshop.0">[ choose... ]</label>
+			<label index="tx_phzhresregistration_domain_model_registration.user_language">Registration language</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype">Registration Type</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype.caption">Caption</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype.price">Price</label>
+			<label index="tx_phzhresregistration_domain_model_workshop">Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.workshopdate">Workshop date</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.block">Block</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.fromtime">Time from</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.totime">Time to</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.title">Title</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.description">Description</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.speaker">Speaker</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.tooltip">Tooltip</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.capacity">Capacity</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.room">Room</label>
+		</languageKey>
+		<languageKey index="en" type="array">
+			<label index="tx_phzhresregistration_domain_model_registration">Registration</label>
+			<label index="tx_phzhresregistration_domain_model_registration.salutation">Salutation</label>
+			<label index="tx_phzhresregistration_domain_model_registration.lastname">Lastname</label>
+			<label index="tx_phzhresregistration_domain_model_registration.firstname">Firstname</label>
+			<label index="tx_phzhresregistration_domain_model_registration.address1">Address1</label>
+			<label index="tx_phzhresregistration_domain_model_registration.address2">Address2</label>
+			<label index="tx_phzhresregistration_domain_model_registration.zip">Zip</label>
+			<label index="tx_phzhresregistration_domain_model_registration.city">City</label>
+			<label index="tx_phzhresregistration_domain_model_registration.country">Country</label>
+			<label index="tx_phzhresregistration_domain_model_registration.company">Company</label>
+			<label index="tx_phzhresregistration_domain_model_registration.phone">Phone</label>
+			<label index="tx_phzhresregistration_domain_model_registration.email">Email</label>
+			<label index="tx_phzhresregistration_domain_model_registration.comment">Comment</label>
+			<label index="tx_phzhresregistration_domain_model_registration.paid">Paid</label>
+			<label index="tx_phzhresregistration_domain_model_registration.assignment_sent">Assignment Sent</label>
+			<label index="tx_phzhresregistration_domain_model_registration.registration_type">Registration Type</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_pri1">Block1 Pri1</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_pri2">Block1 Pri2</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_pri1">Block2 Pri1</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_pri2">Block2 Pri2</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_pri1">Block3 Pri1</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_pri2">Block3 Pri2</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_workshop">Block1 Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_workshop">Block2 Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_workshop">Block3 Workshop</label>
+            <label index="tx_phzhresregistration_domain_model_registration.block_workshop.0">[ choose... ]</label>
+			<label index="tx_phzhresregistration_domain_model_registration.user_language">Registration language</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype">Registration Type</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype.caption">Caption</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype.price">Price</label>
+			<label index="tx_phzhresregistration_domain_model_workshop">Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.workshopdate">Workshop date</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.block">Block</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.fromtime">Time from</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.totime">Time to</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.title">Title</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.description">Description</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.speaker">Speaker</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.tooltip">Tooltip</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.capacity">Capacity</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.room">Room</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_phzhresregistration_domain_model_registration">Anmeldung</label>
+			<label index="tx_phzhresregistration_domain_model_registration.salutation">Anrede</label>
+			<label index="tx_phzhresregistration_domain_model_registration.lastname">Name</label>
+			<label index="tx_phzhresregistration_domain_model_registration.firstname">Vorname</label>
+			<label index="tx_phzhresregistration_domain_model_registration.address1">Adresse 1</label>
+			<label index="tx_phzhresregistration_domain_model_registration.address2">Adresse 2</label>
+			<label index="tx_phzhresregistration_domain_model_registration.zip">PLZ</label>
+			<label index="tx_phzhresregistration_domain_model_registration.city">Ort</label>
+			<label index="tx_phzhresregistration_domain_model_registration.country">Land</label>
+			<label index="tx_phzhresregistration_domain_model_registration.company">Institution/Schule</label>
+			<label index="tx_phzhresregistration_domain_model_registration.phone">Telefon</label>
+			<label index="tx_phzhresregistration_domain_model_registration.email">E-Mail</label>
+			<label index="tx_phzhresregistration_domain_model_registration.comment">Bemerkungen</label>
+			<label index="tx_phzhresregistration_domain_model_registration.paid">bezahlt</label>
+			<label index="tx_phzhresregistration_domain_model_registration.assignment_sent">Einteilung versendet</label>
+			<label index="tx_phzhresregistration_domain_model_registration.registration_type">Anmeldetyp</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_pri1">Block 1, 1. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_pri2">Block 1, 2. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_pri1">Block 2, 1. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_pri2">Block 2, 2. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_pri1">Block 3, 1. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_pri2">Block 3, 2. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_workshop">Block 1 Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_workshop">Block 2 Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_workshop">Block 3 Workshop</label>
+            <label index="tx_phzhresregistration_domain_model_registration.block_workshop.0">[ bitte wählen... ]</label>
+			<label index="tx_phzhresregistration_domain_model_registration.user_language">Anmeldesprache</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype">Anmeldeart</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype.caption">Bezeichnung</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype.price">Preis</label>
+			<label index="tx_phzhresregistration_domain_model_workshop">Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.workshopdate">Workshop-Datum</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.block">Block</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.fromtime">Zeit von</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.totime">Zeit bis</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.title">Titel</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.description">Beschreibung</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.speaker">SprecherIn</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.tooltip">Tooltip</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.capacity">Kapazität</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.room">Raum</label>
+		</languageKey>
+	</data>
+</T3locallang>

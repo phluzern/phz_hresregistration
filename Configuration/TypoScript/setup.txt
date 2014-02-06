@@ -1,0 +1,51 @@
+plugin.tx_phzhresregistration {
+	view {
+		templateRootPath = {$plugin.tx_phzhresregistration.view.templateRootPath}
+		partialRootPath = {$plugin.tx_phzhresregistration.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_phzhresregistration.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_phzhresregistration.persistence.storagePid}
+	}
+
+    settings {
+        # sender of automails and receipient for billing
+        mailSender = info@hres.phlu.ch
+        mailCcReceipient = patrick.erni@phlu.ch
+    }
+
+}
+
+plugin.tx_phzhresregistration._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-phz-hresregistration table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-phz-hresregistration table th {
+		font-weight:bold;
+	}
+
+	.tx-phz-hresregistration table td {
+		vertical-align:top;
+	}
+)
+
+
+
+ # Module configuration
+module.tx_phzhresregistration {
+	persistence {
+		storagePid = {$module.tx_phzhresregistration.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_phzhresregistration.view.templateRootPath}
+		partialRootPath = {$module.tx_phzhresregistration.view.partialRootPath}
+		layoutRootPath = {$module.tx_phzhresregistration.view.layoutRootPath}
+	}
+}

@@ -1,0 +1,24 @@
+<label for="datetime">
+	<f:translate key="tx_phzhresregistration_domain_model_workshop.datetime" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="datetime"  value="{workshop.datetime->f:format.date()}" /><br />
+<label for="title">
+	<f:translate key="tx_phzhresregistration_domain_model_workshop.title" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="title" /><br />
+<label for="description">
+	<f:translate key="tx_phzhresregistration_domain_model_workshop.description" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textarea property="description" cols="40" rows="15" /><br />
+<label for="speaker">
+	<f:translate key="tx_phzhresregistration_domain_model_workshop.speaker" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="speaker" /><br />
+<label for="tooltip">
+	<f:translate key="tx_phzhresregistration_domain_model_workshop.tooltip" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textarea property="tooltip" cols="40" rows="15" /><br />
+<label for="capacity">
+	<f:translate key="tx_phzhresregistration_domain_model_workshop.capacity" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="capacity" /><br />

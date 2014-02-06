@@ -1,0 +1,35 @@
+{namespace phzhres=Tx_PhzHresregistration_ViewHelpers}
+
+<phzhres:format.htmlentitiesDecode>
+	<f:if condition="{newRegistration.salutation} == 0">
+		<f:then>
+			<f:translate key="tx_phzhresregistration_domain_model_registration.confirmationMail.salutationFemale" /> {newRegistration.lastname}
+		</f:then>
+		<f:else>
+			<f:translate key="tx_phzhresregistration_domain_model_registration.confirmationMail.salutationMale" /> {newRegistration.lastname}
+		</f:else>
+	</f:if>
+	<f:translate key="tx_phzhresregistration_domain_model_registration.confirmationMail.contentBeforeDetails" />
+
+	<p>
+		<strong><f:translate key="tx_phzhresregistration_domain_model_registration.tab.registrationtype" /></strong><br />
+		{newRegistration.registrationType.caption}
+	</p>
+	<p>
+		<strong><f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops" /></strong>
+	</p>
+	<ul>
+		<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block1_pri1" />:</strong> {newRegistration.block1Pri1.title}<br /><em>{newRegistration.block1Pri1.speaker}</em></li>
+		<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block1_pri2" />:</strong> {newRegistration.block1Pri2.title}<br /><em>{newRegistration.block1Pri2.speaker}</em></li>
+		<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block2_pri1" />:</strong> {newRegistration.block2Pri1.title}<br /><em>{newRegistration.block2Pri1.speaker}</em></li>
+		<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block2_pri2" />:</strong> {newRegistration.block2Pri2.title}<br /><em>{newRegistration.block2Pri2.speaker}</em></li>
+		<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block3_pri1" />:</strong> {newRegistration.block3Pri1.title}<br /><em>{newRegistration.block3Pri1.speaker}</em></li>
+		<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block3_pri2" />:</strong> {newRegistration.block3Pri2.title}<br /><em>{newRegistration.block3Pri2.speaker}</em></li>
+	</ul>
+
+	<f:translate key="tx_phzhresregistration_domain_model_registration.confirmationMail.contentAfterDetails" />
+	<f:translate key="tx_phzhresregistration_domain_model_registration.confirmationMail.closing" />
+	<f:translate key="tx_phzhresregistration_domain_model_registration.confirmationMail.signature" />
+
+
+</phzhres:format.htmlentitiesDecode>

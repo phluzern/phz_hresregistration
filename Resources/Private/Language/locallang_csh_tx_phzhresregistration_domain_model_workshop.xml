@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_phzhresregistration_domain_model_workshop</description>
+		<type>CSH</type>
+		<csh_table>tx_phzhresregistration_domain_model_workshop</csh_table>
+	</meta>
+	<data type="array">
+        <languageKey index="default" type="array">
+                <label index="workshopdate.description">Workshop date</label>
+                <label index="block.description">Block</label>
+                <label index="fromtime.description">Time from</label>
+                <label index="totime.description">Time to</label>
+                <label index="title.description">Title</label>
+                <label index="description.description">Description</label>
+                <label index="speaker.description">Speaker</label>
+                <label index="tooltip.description">Tooltip</label>
+                <label index="capacity.description">Capacity</label>
+        </languageKey>
+        <languageKey index="en" type="array">
+                <label index="workshopdate.description">Workshop date</label>
+                <label index="block.description">Block</label>
+                <label index="fromtime.description">Time from</label>
+                <label index="totime.description">Time to</label>
+                <label index="title.description">Title</label>
+                <label index="description.description">Description</label>
+                <label index="speaker.description">Speaker</label>
+                <label index="tooltip.description">Tooltip</label>
+                <label index="capacity.description">Capacity</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+                <label index="workshopdate.description">Workshop-Datum</label>
+                <label index="block.description">Block</label>
+                <label index="fromtime.description">Zeit ab</label>
+                <label index="totime.description">Zeit bis</label>
+                <label index="title.description">Titel</label>
+                <label index="description.description">Beschreibung</label>
+                <label index="speaker.description">SprecherIn</label>
+                <label index="tooltip.description">Tooltip</label>
+                <label index="capacity.description">Kapazität</label>
+        </languageKey>
+	</data>
+</T3locallang>

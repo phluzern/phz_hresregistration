@@ -1,0 +1,47 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Workshop</h1>
+
+<f:flashMessages />
+
+<table  class="tx_phzhresregistration" >
+	<tr>
+		<th><f:translate key="tx_phzhresregistration_domain_model_workshop.datetime" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_workshop.title" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_workshop.description" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_workshop.speaker" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_workshop.tooltip" /></th>
+		<th><f:translate key="tx_phzhresregistration_domain_model_workshop.capacity" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{workshops}" as="workshop">
+		<tr>
+			<td><f:link.action action="show" arguments="{workshop : workshop}"> {workshop.datetime -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{workshop : workshop}"> {workshop.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{workshop : workshop}"> {workshop.description}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{workshop : workshop}"> {workshop.speaker}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{workshop : workshop}"> {workshop.tooltip}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{workshop : workshop}"> {workshop.capacity}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{workshop : workshop}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{workshop : workshop}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Workshop</f:link.action>
+</f:section>

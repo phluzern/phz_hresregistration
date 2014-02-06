@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the PH Luzern HRES Registration extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_phzhresregistration_domain_model_registration">Registration</label>
+			<label index="tx_phzhresregistration_domain_model_registration.tab.registrationtype">1. Type of registration</label>
+			<label index="tx_phzhresregistration_domain_model_registration.tab.selectworkshops">2. Workshops</label>
+			<label index="tx_phzhresregistration_domain_model_registration.tab.personaldata">3. Personal data</label>
+			<label index="tx_phzhresregistration_domain_model_registration.tab.complete">4. Complete registration</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.timeformat">h</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.prevButton">&#171; previous step</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.nextButton">next step &#187;</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.completedTitle">Registration completed</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.completed">Your registration was successfully completed. You will receive a confirmation by e-mail as well as a bill by letter post. Thank you very much for your interest in the Human Rights Education Symposium!</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.marketplaceWorkshops">Market place</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.marketplaceTooltip">Click here to display the market place topics. Please select the topics you're interested in.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.error.companyMailError">In order to take advantage of the special fees, you need to use your institutional mail address.<br />Allowed addresses: @phlu.ch, @stud.phlu.ch, @stud.hslu.ch, @stud.unilu.ch</label>
+			<label index="tx_phzhresregistration_domain_model_registration.error.workshopSelectionError">You have to select two different workshops in a block.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.error.personalDataError">Please fill in all mandatory (*) fields.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.error.workshopsNotSelectedError">You need to choose one workshop in first and second priority in each block.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.salutation">Salutation</label>
+			<label index="tx_phzhresregistration_domain_model_registration.salutation.male">Mr.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.salutation.female">Ms.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.lastname">Last name</label>
+			<label index="tx_phzhresregistration_domain_model_registration.firstname">First name</label>
+			<label index="tx_phzhresregistration_domain_model_registration.address1">Address</label>
+			<label index="tx_phzhresregistration_domain_model_registration.address2">Zusatz</label>
+			<label index="tx_phzhresregistration_domain_model_registration.zip">ZIP code</label>
+			<label index="tx_phzhresregistration_domain_model_registration.city">City</label>
+			<label index="tx_phzhresregistration_domain_model_registration.country">Country</label>
+			<label index="tx_phzhresregistration_domain_model_registration.company">Institution/School</label>
+			<label index="tx_phzhresregistration_domain_model_registration.phone">Phone</label>
+			<label index="tx_phzhresregistration_domain_model_registration.email">E-Mail</label>
+			<label index="tx_phzhresregistration_domain_model_registration.comment">Comments</label>
+			<label index="tx_phzhresregistration_domain_model_registration.paid">Paid</label>
+			<label index="tx_phzhresregistration_domain_model_registration.assignment_sent">Assignment sent</label>
+			<label index="tx_phzhresregistration_domain_model_registration.registration_type">Registration type</label>
+            <label index="tx_phzhresregistration_domain_model_registration.header.tooltip">select two events: one for 1st and one for 2nd priority</label>
+            <label index="tx_phzhresregistration_domain_model_registration.header">1st 2nd  priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.pri1">1st priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.pri2">2nd priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_pri1">Block 1, 1st priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_pri2">Block 1, 2nd priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_pri1">Block 2, 1st priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_pri2">Block 2, 2nd priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_pri1">Block 3, 1st priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_pri2">Block 3, 2nd priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_workshop">Block 1, Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_workshop">Block 2, Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_workshop">Block 3, Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.submit">Submit registration</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype">Registration type</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype.caption">Caption</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype.price">Price</label>
+			<label index="tx_phzhresregistration_domain_model_workshop">Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.workshopdate">Workshop date</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.block">Block</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.fromtime">Time from</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.totime">Time to</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.title">Title</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.description">Description</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.speaker">Speaker</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.tooltip">Tooltip</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.capacity">Capacity</label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.subject">Human Rights Education Symposium 2014 (HRES)</label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.salutationMale">Dear Mr.</label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.salutationFemale">Dear Ms.</label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.contentBeforeDetails">
+            <![CDATA[
+<p>Thank you very much for your registration at the <strong>2<sup>nd</sup> Human Rights Education Symposium Lucerne 2014 „Human Rights Education and Subject Matters in School“</strong> on April 12<sup>th</sup>, 2014 at the UNI/PH building in Lucerne. We are happy to confirm your registration.</p>
+            ]]>
+            </label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.contentAfterDetails">
+            <![CDATA[
+<p>In a few days you will receive a request of payment from the PH Luzern finance department.<br />As soon as we have your payment, we will proceed with the workshop arrangements. In early April you will be informed about your workshop participation and receive more information on the symposium.</p>
+<p>Please do not hesitate to contact us if you have any questions.</p>
+<p>We look forward to meeting you in Lucerne.</p>
+            ]]>
+            </label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.closing">
+            <![CDATA[
+<p>Sincerely</p>
+<table> <tbody>
+<tr> <td><strong>Thomas Kirchschläger</strong><br />Co-Director of the Centre of Human Rights Education (ZMRB)</td>
+<td><strong>PD Dr. Peter G. Kirchschläger</strong><br />Co-Director of the Centre of Human Rights <br />Education (ZMRB)</td> </tr>
+<tr> <td><strong>Franziska Brugger</strong><br />Responsible for the 2nd Human Rights Education Symposium Lucerne 2014</td>
+<td><strong>Elisha Frei</strong><br />Head of the StudentTeam of the Human Rights Education Symposium Lucerne 2014</td> </tr> </tbody></table>
+<p>Cancellations are subject to a cancellation fee of CHF 100.-</p>
+            ]]>
+            </label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.signature">
+            <![CDATA[
+<p> <strong>Information:</strong><br /> Human Rights Education Symposium Lucerne<br /> PH Luzern<br /> Sentimatt 1<br /> CH-6003 Lucerne<br /> Switzerland<br /> phone +41 (0)41 228 47 34<br /> fax +41 (0)41 228 47 31<br /> e-Mail <a href="mailto:hres@phlu.ch">hres@phlu.ch</a><br /> <a href="http://www.hres.phlu.ch" data-htmlarea-external="1">www.hres.phlu.ch</a> </p>
+            ]]>
+            </label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.marketplaceInformationTitle">Information about the Market Place</label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.marketplaceInformationTooltip">
+            <![CDATA[
+                <!-- kein text im 2014 -->
+            ]]>
+            </label>
+		</languageKey>
+		<languageKey index="en" type="array">
+			<label index="tx_phzhresregistration_domain_model_registration">Registration</label>
+			<label index="tx_phzhresregistration_domain_model_registration.tab.registrationtype">1. Type of registration</label>
+			<label index="tx_phzhresregistration_domain_model_registration.tab.selectworkshops">2. Workshops</label>
+			<label index="tx_phzhresregistration_domain_model_registration.tab.personaldata">3. Personal data</label>
+			<label index="tx_phzhresregistration_domain_model_registration.tab.complete">4. Complete registration</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.timeformat">h</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.prevButton">&#171; previous step</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.nextButton">next step &#187;</label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.completedTitle">Registration completed</label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.completed">Your registration was successfully completed. You will receive a confirmation by e-mail as well as a bill by letter post. Thank you very much for your interest in the Human Rights Education Symposium!</label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.marketplaceWorkshops">Market place</label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.marketplaceTooltip">Click here to display the market place topics. Please select the topics you're interested in.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.error.companyMailError">In order to take advantage of the special fees, you need to use your institutional mail address.<br />Allowed addresses: @phlu.ch, @stud.phlu.ch, @stud.hslu.ch, @stud.unilu.ch</label>
+			<label index="tx_phzhresregistration_domain_model_registration.error.workshopSelectionError">You have to select two different workshops in a block.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.error.personalDataError">Please fill in all mandatory (*) fields.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.error.workshopsNotSelectedError">You need to choose one workshop in first and second priority in each block.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.salutation">Salutation</label>
+			<label index="tx_phzhresregistration_domain_model_registration.salutation.male">Mr.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.salutation.female">Ms.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.lastname">Last name</label>
+			<label index="tx_phzhresregistration_domain_model_registration.firstname">First name</label>
+			<label index="tx_phzhresregistration_domain_model_registration.address1">Address</label>
+			<label index="tx_phzhresregistration_domain_model_registration.address2">Address (optional)</label>
+			<label index="tx_phzhresregistration_domain_model_registration.zip">ZIP code</label>
+			<label index="tx_phzhresregistration_domain_model_registration.city">City</label>
+			<label index="tx_phzhresregistration_domain_model_registration.country">Country</label>
+			<label index="tx_phzhresregistration_domain_model_registration.company">Institution/School</label>
+			<label index="tx_phzhresregistration_domain_model_registration.phone">Phone</label>
+			<label index="tx_phzhresregistration_domain_model_registration.email">E-Mail</label>
+			<label index="tx_phzhresregistration_domain_model_registration.comment">Comments</label>
+			<label index="tx_phzhresregistration_domain_model_registration.paid">Paid</label>
+			<label index="tx_phzhresregistration_domain_model_registration.assignment_sent">Assignment sent</label>
+			<label index="tx_phzhresregistration_domain_model_registration.registration_type">Registration type</label>
+            <label index="tx_phzhresregistration_domain_model_registration.header.tooltip">select two events: one for 1st and one for 2nd priority</label>
+            <label index="tx_phzhresregistration_domain_model_registration.header">1st 2nd  priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.pri1">1st priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.pri2">2nd priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_pri1">Block 1, 1st priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_pri2">Block 1, 2nd priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_pri1">Block 2, 1st priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_pri2">Block 2, 2nd priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_pri1">Block 3, 1st priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_pri2">Block 3, 2nd priority</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_workshop">Block 1, Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_workshop">Block 2, Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_workshop">Block 3, Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.submit">Submit registration</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype">Registration type</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype.caption">Caption</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype.price">Price</label>
+			<label index="tx_phzhresregistration_domain_model_workshop">Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.workshopdate">Workshop date</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.block">Block</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.fromtime">Time from</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.totime">Time to</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.title">Title</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.description">Description</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.speaker">Speaker</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.tooltip">Tooltip</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.capacity">Capacity</label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.subject">Human Rights Education Symposium 2014 (HRES)</label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.salutationMale">Dear Mr.</label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.salutationFemale">Dear Ms.</label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.contentBeforeDetails">
+            <![CDATA[
+<p>Thank you very much for your registration at the <strong>2<sup>nd</sup> Human Rights Education Symposium Lucerne 2014 „Human Rights Education and Subject Matters in School“</strong> on April 12<sup>th</sup>, 2014 at the UNI/PH building in Lucerne. We are happy to confirm your registration.</p>
+            ]]>
+            </label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.contentAfterDetails">
+            <![CDATA[
+<p>In a few days you will receive a request of payment from the PH Luzern finance department.<br />As soon as we have your payment, we will proceed with the workshop arrangements. In early April you will be informed about your workshop participation and receive more information on the symposium.</p>
+<p>Please do not hesitate to contact us if you have any questions.</p>
+<p>We look forward to meeting you in Lucerne.</p>
+            ]]>
+            </label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.closing">
+            <![CDATA[
+<p>Sincerely</p>
+<table> <tbody>
+<tr> <td><strong>Thomas Kirchschläger</strong><br />Co-Director of the Centre of Human Rights Education (ZMRB)</td>
+<td><strong>PD Dr. Peter G. Kirchschläger</strong><br />Co-Director of the Centre of Human Rights <br />Education (ZMRB)</td> </tr>
+<tr> <td><strong>Franziska Brugger</strong><br />Responsible for the 2nd Human Rights Education Symposium Lucerne 2014</td>
+<td><strong>Elisha Frei</strong><br />Head of the StudentTeam of the Human Rights Education Symposium Lucerne 2014</td> </tr> </tbody></table>
+<p>Cancellations are subject to a cancellation fee of CHF 100.-</p>
+            ]]>
+            </label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.signature">
+            <![CDATA[
+            <p> <strong>Information:</strong><br /> Human Rights Education Symposium Lucerne<br /> PH Luzern<br /> Sentimatt 1<br /> CH-6003 Lucerne<br /> Switzerland<br /> phone +41 (0)41 228 47 34<br /> fax +41 (0)41 228 47 31<br /> e-Mail <a href="mailto:hres@phlu.ch">hres@phlu.ch</a><br /> <a href="http://www.hres.phlu.ch" data-htmlarea-external="1">www.hres.phlu.ch</a> </p>
+            ]]>
+            </label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.marketplaceInformationTitle">Information about the Market Place</label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.marketplaceInformationTooltip">
+            <![CDATA[
+                <p><!-- kein text im 2014 --></p>
+            ]]>
+            </label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_phzhresregistration_domain_model_registration">Anmeldung</label>
+			<label index="tx_phzhresregistration_domain_model_registration.tab.registrationtype">1. Anmeldeart</label>
+			<label index="tx_phzhresregistration_domain_model_registration.tab.selectworkshops">2. Workshops</label>
+			<label index="tx_phzhresregistration_domain_model_registration.tab.personaldata">3. Persönliche Angaben</label>
+			<label index="tx_phzhresregistration_domain_model_registration.tab.complete">4. Anmeldung abschliessen</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.timeformat">Uhr</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.prevButton">&#171; zurück</label>
+			<label index="tx_phzhresregistration_domain_model_registration.text.nextButton">weiter &#187;</label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.completedTitle">Anmeldung abgeschlossen</label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.completed">Ihre Anmeldung wurde erfolgreich abgeschlossen. Sie erhalten eine Bestätigung per E-Mail und eine Rechnung per Briefpost. Herzlichen Dank für Ihr Interesse am Human Rights Education Symposium!</label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.marketplaceWorkshops">Marktplatz</label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.marketplaceTooltip">Klicken Sie hier, um die Marktplatz-Themen anzuzeigen. Geben Sie an, für welche Themen Sie sich interessieren würden.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.error.companyMailError">Um von den Spezialpreisen zu profitieren, müssen Sie Ihre institutionelle E-Mail-Adresse benutzen.<br />Erlaubte Adressen: @phlu.ch, @stud.phlu.ch, @stud.hslu.ch, @stud.unilu.ch</label>
+			<label index="tx_phzhresregistration_domain_model_registration.error.workshopSelectionError">Sie müssen zwei unterschiedliche Workshops pro Block auswählen.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.error.personalDataError">Bitte füllen Sie alle Pflichtfelder (*) aus.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.error.workshopsNotSelectedError">Sie müssen für jeden Workshop-Block je einen Workshop in erster und zweiter Priorität wählen.</label>
+			<label index="tx_phzhresregistration_domain_model_registration.salutation">Anrede</label>
+			<label index="tx_phzhresregistration_domain_model_registration.salutation.male">Herr</label>
+			<label index="tx_phzhresregistration_domain_model_registration.salutation.female">Frau</label>
+			<label index="tx_phzhresregistration_domain_model_registration.lastname">Name</label>
+			<label index="tx_phzhresregistration_domain_model_registration.firstname">Vorname</label>
+			<label index="tx_phzhresregistration_domain_model_registration.address1">Address</label>
+			<label index="tx_phzhresregistration_domain_model_registration.address2">Zusatz (optional)</label>
+			<label index="tx_phzhresregistration_domain_model_registration.zip">PLZ</label>
+			<label index="tx_phzhresregistration_domain_model_registration.city">Ort</label>
+			<label index="tx_phzhresregistration_domain_model_registration.country">Land</label>
+			<label index="tx_phzhresregistration_domain_model_registration.company">Institution/Schule</label>
+			<label index="tx_phzhresregistration_domain_model_registration.phone">Telefon</label>
+			<label index="tx_phzhresregistration_domain_model_registration.email">E-Mail</label>
+			<label index="tx_phzhresregistration_domain_model_registration.comment">Bemerkungen</label>
+			<label index="tx_phzhresregistration_domain_model_registration.paid">bezahlt</label>
+			<label index="tx_phzhresregistration_domain_model_registration.assignment_sent">Einteilung versendet</label>
+			<label index="tx_phzhresregistration_domain_model_registration.registration_type">Anmeldeart</label>
+            <label index="tx_phzhresregistration_domain_model_registration.header">1. &#160;&#160; 2. &#160; Priorität</label>
+            <label index="tx_phzhresregistration_domain_model_registration.header.tooltip">wählen Sie zwei Anlässe: einen als erste und einen als zweite Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.pri1">1. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.pri2">2. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_pri1">Block 1, 1. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_pri2">Block 1, 2. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_pri1">Block 2, 1. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_pri2">Block 2, 2. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_pri1">Block 3, 1. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_pri2">Block 3, 2. Priorität</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block1_workshop">Block 1, Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block2_workshop">Block 2, Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.block3_workshop">Block 3, Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_registration.submit">Anmeldung absenden</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype">Anmeldeart</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype.caption">Bezeichnung</label>
+			<label index="tx_phzhresregistration_domain_model_registrationtype.price">Preis</label>
+			<label index="tx_phzhresregistration_domain_model_workshop">Workshop</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.workshopdate">Workshop-Datum</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.block">Block</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.fromtime">Zeit ab</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.totime">Zeit bis</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.title">Titel</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.description">Beschreibung</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.speaker">SprecherIn</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.tooltip">Tooltip</label>
+			<label index="tx_phzhresregistration_domain_model_workshop.capacity">Kapazität</label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.subject">Fachtagung Menschenrechtsbildung Luzern 2014 (HRES)</label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.salutationMale">Sehr geehrter Herr</label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.salutationFemale">Sehr geehrte Frau</label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.contentBeforeDetails">
+            <![CDATA[
+<p>Herzlich danken wir Ihnen für Ihre Anmeldung für die <strong>2. Fachtagung Menschenrechtsbildung Luzern „Menschenrechtsbildung und die Schulfächer“</strong> am 12. April 2014 im UNI/PH Gebäude in Luzern. Gerne bestätigen wir Ihnen Ihre Anmeldung.</p>
+            ]]>
+            </label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.contentAfterDetails">
+            <![CDATA[
+<p>Sie werden in einigen Tagen von der PH Luzern Rechnungsabteilung eine Zahlungsaufforderung erhalten.<br />Bei eingegangener Zahlung werden wir mit der Einteilung der Workshops fortschreiten. Sie werden Anfang April Ihre definitive Workshopeinteilung sowie weitere Informationen zur Tagung erhalten.</p>
+<p>Zögern Sie nicht, sich bei Fragen an uns zu wenden.</p>
+<p>Wir freuen uns auf Ihr Kommen und auf eine Begegnung bei diesem Anlass.</p>
+            ]]>
+            </label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.closing">
+            <![CDATA[
+<p>Freundliche Grüsse</p>
+<table> <tbody>
+<tr class="indent">
+<td><strong>Thomas Kirchschläger</strong><br />Co-Leiter Zentrum für Menschenrechtsbildung (ZMRB)</td>
+ <td><strong>PD Dr. Peter G. Kirchschläger</strong><br />Co-Leiter Zentrum für Menschenrechtsbildung (ZMRB)</td> </tr>
+ <tr>
+ <td><strong>Franziska Brugger</strong><br />Verantwortliche 2. Fachtagung Menschenrechtsbildung Luzern 2014</td>
+ <td><strong>Elisha Frei</strong><br />Leiterin StudentTeam Fachtagung Menschenrechtsbildung Luzern 2014</td>
+ </tr> </tbody></table>
+<p>Bei Abmeldungen ist eine Annullierungsgebühr von CHF 100.- zu entrichten.</p>
+            ]]>
+            </label>
+            <label index="tx_phzhresregistration_domain_model_registration.confirmationMail.signature">
+            <![CDATA[
+<p> <strong>Information:</strong><br /> Fachtagung Menschenrechtsbildung Luzern<br /> PH Luzern<br /> Sentimatt 1<br /> CH-6003 Luzern<br /> Schweiz<br /> Tel. +41 (0)41 228 47 34<br /> Fax +41 (0)41 228 47 31<br /> E-Mail <a href="mailto:hres@phlu.ch">hres@phlu.ch</a><br /> <a href="http://www.hres.phlu.ch" data-htmlarea-external="1">www.hres.phlu.ch</a> </p>
+            ]]>
+            </label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.marketplaceInformationTitle">Hinweise zum Marktplatz</label>
+            <label index="tx_phzhresregistration_domain_model_registration.text.marketplaceInformationTooltip">
+            <![CDATA[
+                <!-- kein text im 2014 -->
+            ]]>
+            </label>
+		</languageKey>
+	</data>
+</T3locallang>

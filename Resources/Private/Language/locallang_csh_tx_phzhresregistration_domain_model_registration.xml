@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_phzhresregistration_domain_model_registration</description>
+		<type>CSH</type>
+		<csh_table>tx_phzhresregistration_domain_model_registration</csh_table>
+	</meta>
+	<data type="array">
+	<languageKey index="default" type="array">
+			<label index="salutation.description">Salutation</label>
+			<label index="lastname.description">Last name</label>
+			<label index="firstname.description">First name</label>
+			<label index="address1.description">Address</label>
+			<label index="address2.description">Address 2 (optional)</label>
+			<label index="zip.description">ZIP code</label>
+			<label index="city.description">City</label>
+			<label index="country.description">Country</label>
+			<label index="company.description">Institution/School</label>
+			<label index="phone.description">Phone</label>
+			<label index="email.description">E-Mail</label>
+			<label index="comment.description">Comments</label>
+			<label index="paid.description">Paid</label>
+			<label index="assignment_sent.description">Assignment sent</label>
+			<label index="registration_type.description">Registration type</label>
+			<label index="block1_pri1.description">Block 1, 1st priority</label>
+			<label index="block1_pri2.description">Block 1, 2nd priority</label>
+			<label index="block2_pri1.description">Block 2, 1st priority</label>
+			<label index="block2_pri2.description">Block 2, 2nd priority</label>
+			<label index="block3_pri1.description">Block 3, 1st priority</label>
+			<label index="block3_pri2.description">Block 3, 2nd priority</label>
+			<label index="block1_workshop.description">Block 1, Workshop</label>
+			<label index="block2_workshop.description">Block 2, Workshop</label>
+			<label index="block3_workshop.description">Block 3, Workshop</label>
+		</languageKey>
+	<languageKey index="en" type="array">
+			<label index="salutation.description">Salutation</label>
+			<label index="lastname.description">Last name</label>
+			<label index="firstname.description">First name</label>
+			<label index="address1.description">Address</label>
+			<label index="address2.description">Address 2 (optional)</label>
+			<label index="zip.description">ZIP code</label>
+			<label index="city.description">City</label>
+			<label index="country.description">Country</label>
+			<label index="company.description">Institution/School</label>
+			<label index="phone.description">Phone</label>
+			<label index="email.description">E-Mail</label>
+			<label index="comment.description">Comments</label>
+			<label index="paid.description">Paid</label>
+			<label index="assignment_sent.description">Assignment sent</label>
+			<label index="registration_type.description">Registration type</label>
+			<label index="block1_pri1.description">Block 1, 1st priority</label>
+			<label index="block1_pri2.description">Block 1, 2nd priority</label>
+			<label index="block2_pri1.description">Block 2, 1st priority</label>
+			<label index="block2_pri2.description">Block 2, 2nd priority</label>
+			<label index="block3_pri1.description">Block 3, 1st priority</label>
+			<label index="block3_pri2.description">Block 3, 2nd priority</label>
+			<label index="block1_workshop.description">Block 1, Workshop</label>
+			<label index="block2_workshop.description">Block 2, Workshop</label>
+			<label index="block3_workshop.description">Block 3, Workshop</label>
+		</languageKey>
+	<languageKey index="de" type="array">
+			<label index="salutation.description">Anrede</label>
+			<label index="lastname.description">Name</label>
+			<label index="firstname.description">Vorname</label>
+			<label index="address1.description">Adresse</label>
+			<label index="address2.description">Zusatz (optional)</label>
+			<label index="zip.description">PLZ</label>
+			<label index="city.description">Ort</label>
+			<label index="country.description">Land</label>
+			<label index="company.description">Institution/Schule</label>
+			<label index="phone.description">Telefon</label>
+			<label index="email.description">E-Mail</label>
+			<label index="comment.description">Bemerkungen</label>
+			<label index="paid.description">bezahlt</label>
+			<label index="assignment_sent.description">Einteilung versendet</label>
+			<label index="registration_type.description">Anmeldeart</label>
+			<label index="block1_pri1.description">Block 1, 1. Priorität</label>
+			<label index="block1_pri2.description">Block 1, 2. Priorität</label>
+			<label index="block2_pri1.description">Block 2, 1. Priorität</label>
+			<label index="block2_pri2.description">Block 2, 2. Priorität</label>
+			<label index="block3_pri1.description">Block 3, 1. Priorität</label>
+			<label index="block3_pri2.description">Block 3, 2. Priorität</label>
+			<label index="block1_workshop.description">Block 1, Workshop</label>
+			<label index="block2_workshop.description">Block 2, Workshop</label>
+			<label index="block3_workshop.description">Block 3, Workshop</label>
+		</languageKey>
+	</data>
+</T3locallang>
