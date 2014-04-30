@@ -1,142 +1,161 @@
 {namespace phzhres=Tx_PhzHresregistration_ViewHelpers}
 
 <phzhres:format.htmlentitiesDecode>
-	<style type="text/css">
-	<!--
-		p, table { font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
-		th.header { background-color: #00578E; color: #fff; }
-		th { text-align: left; vertical-align: top; }
-	-->
-	</style>
+    <style type="text/css">
+    <!--
+        p, table { font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+        h3 { font-family: Arial, Helvetica, sans-serif }
+        th.header { background-color: #00578E; color: #fff; }
+        th { text-align: left; vertical-align: top; }
+    -->
+    </style>
 
-	<f:if condition="{registration.salutation} == 0">
-		<f:then>
-			<p>Sehr geehrte Frau {registration.lastname}</p>
-		</f:then>
-		<f:else>
-			<p>Sehr geehrter Herr {registration.lastname}</p>
-		</f:else>
-	</f:if>
+    <f:if condition="{registration.salutation} == 0">
+        <f:then>
+            <p>Sehr geehrte Frau {registration.lastname}</p>
+        </f:then>
+        <f:else>
+            <p>Sehr geehrter Herr {registration.lastname}</p>
+        </f:else>
+    </f:if>
 
-	<p>Am 28. April 2012 wird die <strong>Fachtagung Menschenrechtsbildung Luzern</strong> zum Thema <strong>„Materialien der Menschenrechtsbildung“</strong> eröffnet. Während diesem Tag steht in Luzern die Menschenrechtsbildung im Mittelpunkt des Geschehens. Wir freuen uns über Anmeldungen von Teilnehmenden aus diversen Expertenbereichen, was spannende Diskussionen und einen vielversprechenden Erfahrungs- und Wissensaustausch verheisst.</p>
-	<p>Um die Tagung pünktlich eröffnen und einen reibungslosen Ablauf gewährleisten zu können, bitten wir Sie, frühzeitig im Uni/PHZ-Gebäude in Luzern zu erscheinen (Türöffnung 8.45 Uhr) und bei der Anmeldung diese E-Mail in ausgedruckter Form bereit zu halten. Diese wird für den Einlass benötigt.</p>
-	<p>Untenstehend finden Sie Ihre Workshopeinteilung für die drei Workshop Runden sowie einen Lageplan zum Tagungsort. Das Gebäude befindet sich bei der Frohburgstrasse 3, direkt neben dem KKL und dem Hauptbahnhof. Das Programm zur Fachtagungen finden Sie unter <a href="http://www.hres.phz.ch">www.hres.phz.ch</a>. Bei Fragen Ihrerseits stehen wir Ihnen gerne unter <a href="mailto:info@hres.phz.ch">info@hres.phz.ch</a> zur Verfügung.</p>
-	<p>Wir danken Ihnen herzlich für Ihre Kenntnisnahme und freuen uns sehr, Sie an der <strong>Fachtagung Menschenrechtsbildung Luzern</strong> begrüssen zu dürfen.</p>
+    <p>Am 12. April 2014 wird die <strong>Fachtagung Menschenrechtsbildung Luzern</strong> zum Thema <strong>„Menschenrechtsbildung und die Schulfächer“</strong> stattfinden. Während diesem Tag steht in Luzern die Menschenrechtsbildung im Mittelpunkt des Geschehens. Wir freuen uns über Anmeldungen von Teilnehmenden aus diversen Expertenbereichen, was spannende Diskussionen und einen vielversprechenden Erfahrungs- und Wissensaustausch verheisst.</p>
+    <p>Um die Tagung pünktlich eröffnen und einen reibungslosen Ablauf gewährleisten zu können, bitten wir Sie, frühzeitig im Uni/PH-Gebäude in Luzern zu erscheinen (Türöffnung 8.30 Uhr) und bei der Anmeldung diese E-Mail in ausgedruckter Form bereit zu halten. Diese wird für den Einlass benötigt. Das Gebäude befindet sich an der Frohburgstrasse 3, direkt neben dem KKL und dem Hauptbahnhof.</p>
+    <p>Untenstehend finden Sie Ihre Workshopeinteilung für die drei Workshoprunden. Das Programm zur Fachtagung finden Sie unter <a href="http://www.hres.phlu.ch">www.hres.phlu.ch</a>. Bei Fragen Ihrerseits stehen wir Ihnen gerne unter <a href="mailto:hres@phlu.ch">hres@phlu.ch</a> zur Verfügung.
+    <p>Wir danken Ihnen herzlich für Ihre Kenntnisnahme und freuen uns sehr, Sie an der <strong>Fachtagung Menschenrechtsbildung Luzern 2014</strong> begrüssen zu dürfen.</p>
 
-	<p>Freundliche Grüsse</p>
-	<table width="70%">
-		<tr>
-			<td>Thomas Kirchschläger<br />Co-Leiter ZMRB</td>
-			<td>Dr. Peter G. Kirchschläger<br />Co-Leiter ZMRB</td>
-		</tr>
-		<tr>
-			<td>Lukas Tobler<br />Verantwortlicher HRES 2012</td>
-			<td>Nadia Nicolet<br />Leitung StudentTeam 2012</td>
-		</tr>
-	</table>
+    <p>Freundliche Grüsse</p>
+    
+    <table width="70%">
+        <tbody>
+            <tr>
+                <td>
+                    Thomas Kirchschläger<br />
+                    Co-Leiter ZMRB
+                </td>
+                <td>
+                    PD Dr. Peter G. Kirchschläger<br />
+                    Co-Leiter ZMRB
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Franziska Brugger<br />
+                    Verantwortliche Fachtagung 2014
+                </td>
+                <td>
+                    Elisha Frei<br />
+                    Leitung StudentTeam 2014
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-	<p>
-	<strong>Information:</strong><br />
-	Fachtagung Menschenrechtsbildung Luzern (HRES)<br />
-	PHZ Luzern<br />
-	Sentimatt 1<br />
-	CH-6003 Luzern<br />
-	Schweiz<br />
-	Tel. +41 (0)41 228 47 30<br />
-	Fax +41 (0)41 228 47 31<br />
-	E-Mail <a href="mailto:info@hres.phz.ch">info@hres.phz.ch</a><br />
-	<a href="http://www.hres.phz.ch">www.hres.phz.ch</a>
-	</p>
+    <p>
+        <strong>Information:</strong><br />
+        Fachtagung Menschenrechtsbildung Luzern<br />
+        Zentrum für Menschenrechtsbildung (ZMRB)<br />
+        PH Luzern<br />
+        Sentimatt 1<br />
+        CH-6003 Luzern<br />
+        Schweiz<br />
+        Tel. +41 (0)41 228 47 34<br />
+        Fax +41 (0)41 228 47 31<br />
+        E-Mail <a href="mailto:hres@phlu.ch">hres@phlu.ch</a><br />
+        <a href="http://www.hres.phlu.ch">www.hres.phlu.ch</a>
+    </p>
 
-	<p><strong>Ihr Tagungspass:</strong></p>
-	<table>
-		<tbody>
-			<tr>
-				<th class="header" colspan="2">
-					Teilnahmeart
-				</th>
-			</tr>
-			<tr>
-				<td colspan="2">
-					{registrationType.caption}
-				</td>
-			</tr>
-			<tr>
-				<th class="header" colspan="2">
-					Ihre Workshop-Einteilung
-				</th>
-			</tr>
-			<tr>
-				<td>
-					<strong>Runde 1, 10.30-11.45 Uhr</strong>
-				</td>
-				<td>
-					{registration.block1Workshop.title}, {registration.block1Workshop.speaker}, {registration.block1Workshop.room}
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>Runde 2, 13.15-14.30 Uhr</strong>
-				</td>
-				<td>
-					{registration.block2Workshop.title}, {registration.block2Workshop.speaker}, {registration.block2Workshop.room}
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>Runde 3, 15.00-16.15 Uhr</strong>
-				</td>
-				<td>
-					{registration.block3Workshop.title}, {registration.block3Workshop.speaker}, {registration.block3Workshop.room}
-				</td>
-			</tr>
-			<tr>
-				<th class="header" colspan="2">
-					Persönliche Angaben
-				</th>
-			</tr>
-			<tr>
-				<td>
-					<strong>Anrede</strong>
-				</td>
-				<td>
-					<f:if condition="{registration.salutation} == 0">
-						<f:then>
-							Frau
-						</f:then>
-						<f:else>
-							Herr
-						</f:else>
-					</f:if>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>Name</strong>
-				</td>
-				<td>
-					{registration.lastName}
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>Vorname</strong>
-				</td>
-				<td>
-					{registration.firstName}
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>E-Mail</strong>
-				</td>
-				<td>
-					{registration.email}
-				</td>
-			</tr>
-		</tbody>
-	</table>
 
-	<img border="1" src="{embeddedPicture}" />
+    <h3>Ihr Tagungspass:</h3>
+
+    <table>
+        <tbody>
+            <tr>
+                <th class="header" colspan="2">
+                    Teilnahmeart
+                </th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    {registrationType.caption}
+                </td>
+            </tr>
+            <tr>
+                <th class="header" colspan="2">
+                    Ihre Workshop-Einteilung
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Runde 1, 11.15-12.30 Uhr</strong>
+                </td>
+                <td>
+                    {registration.block1Workshop.title}, {registration.block1Workshop.speaker}, {registration.block1Workshop.room}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Runde 2, 13.30-14.45 Uhr</strong>
+                </td>
+                <td>
+                    {registration.block2Workshop.title}, {registration.block2Workshop.speaker}, {registration.block2Workshop.room}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Runde 3, 15.15-16.30 Uhr</strong>
+                </td>
+                <td>
+                    {registration.block3Workshop.title}, {registration.block3Workshop.speaker}, {registration.block3Workshop.room}
+                </td>
+            </tr>
+            <tr>
+                <th class="header" colspan="2">
+                    Persönliche Angaben
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Anrede</strong>
+                </td>
+                <td>
+                    <f:if condition="{registration.salutation} == 0">
+                        <f:then>
+                            Frau
+                        </f:then>
+                        <f:else>
+                            Herr
+                        </f:else>
+                    </f:if>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Name</strong>
+                </td>
+                <td>
+                    {registration.lastName}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Vorname</strong>
+                </td>
+                <td>
+                    {registration.firstName}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>E-Mail</strong>
+                </td>
+                <td>
+                    {registration.email}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <img border="1" src="{embeddedPicture}" />
 
 </phzhres:format.htmlentitiesDecode>
