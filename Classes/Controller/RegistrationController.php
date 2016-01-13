@@ -4,7 +4,7 @@
  *  Copyright notice
  *
  *  (c) 2012 Lorenz Ulrich <lorenz.ulrich@phz.ch>, PHZ Luzern Eduweb
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -34,206 +34,212 @@
  */
 class Tx_PhzHresregistration_Controller_RegistrationController extends Tx_PhzHresregistration_Controller_BaseController {
 
-	/**
-	 * registrationRepository
-	 *
-	 * @var Tx_PhzHresregistration_Domain_Repository_RegistrationRepository
-	 * @inject
-	 */
-	protected $registrationRepository;
+    /**
+     * registrationRepository
+     *
+     * @var Tx_PhzHresregistration_Domain_Repository_RegistrationRepository
+     * @inject
+     */
+    protected $registrationRepository;
 
-	/**
-	 * registrationTypeRepository
-	 *
-	 * @var Tx_PhzHresregistration_Domain_Repository_RegistrationTypeRepository
-	 * @inject
-	 */
-	protected $registrationTypeRepository;
+    /**
+     * registrationTypeRepository
+     *
+     * @var Tx_PhzHresregistration_Domain_Repository_RegistrationTypeRepository
+     * @inject
+     */
+    protected $registrationTypeRepository;
 
-	/**
-	 * workshopRepository
-	 *
-	 * @var Tx_PhzHresregistration_Domain_Repository_WorkshopRepository
-	 * @inject
-	 */
-	protected $workshopRepository;
+    /**
+     * workshopRepository
+     *
+     * @var Tx_PhzHresregistration_Domain_Repository_WorkshopRepository
+     * @inject
+     */
+    protected $workshopRepository;
 
-	/**
-	 * action show
-	 *
-	 * @param $registration
-	 * @return void
-	 */
-	public function showAction(Tx_PhzHresregistration_Domain_Model_Registration $registration) {
-		$this->view->assign('registration', $registration);
-	}
+    /**
+     * action show
+     *
+     * @param $registration
+     * @return void
+     */
+    public function showAction(Tx_PhzHresregistration_Domain_Model_Registration $registration) {
+        $this->view->assign('registration', $registration);
+    }
 
-	/**
-	 * action list
-	 *
-	 * @return void
-	 */
-	public function confirmationMailAction() {
-		$registrations = $this->registrationRepository->findAllAssigned();
-		$this->view->assign('registrations', $registrations);
-	}
+    /**
+     * action list
+     *
+     * @return void
+     */
+    public function confirmationMailAction() {
+        $registrations = $this->registrationRepository->findAllAssigned();
+        $this->view->assign('registrations', $registrations);
+    }
 
-	/**
-	 * action list
-	 *
-	 * @return void
-	 */
-	public function sendConfirmationMailAction() {
-		$registrations = $this->registrationRepository->findAllAssigned();
+    /**
+     * action list
+     *
+     * @return void
+     */
+    public function sendConfirmationMailAction() {
+        $registrations = $this->registrationRepository->findAllAssigned();
 
-		foreach($registrations as $registration) {
+        foreach($registrations as $registration) {
 
-			$userLanguage = $registration->getUserLanguage();
+            $userLanguage = $registration->getUserLanguage();
 
-			if ($userLanguage === 0) {
-				// german
-				$sender = array($this->settings['mailSender'] => 'Fachtagung Menschenrechtsbildung (HRES)');
-				$subject = 'Reminder und Workshop-Einteilung';
-				$templateName = 'AssignmentGerman';
-				$registrationType = $this->registrationTypeRepository->findOneByUid($registration->getRegistrationType()->getUid());
-				$block1Workshop = $this->workshopRepository->findOneByUid($registration->getBlock1Workshop()->getUid());
-				$block2Workshop = $this->workshopRepository->findOneByUid($registration->getBlock2Workshop()->getUid());
-				$block3Workshop = $this->workshopRepository->findOneByUid($registration->getBlock3Workshop()->getUid());
-			} elseif ($userLanguage === 3) {
-				// english
-				$sender = array($this->settings['mailSender'] => 'Human Rights Education Symposium (HRES)');
-				$subject = 'Reminder and workshop schedule';
-				$templateName = 'AssignmentEnglish';
-				$registrationType = $this->registrationTypeRepository->findOneByL10nParent($registration->getRegistrationType()->getUid());
-				$block1Workshop = $this->workshopRepository->findOneByL10nParent($registration->getBlock1Workshop()->getUid());
-				$block2Workshop = $this->workshopRepository->findOneByL10nParent($registration->getBlock2Workshop()->getUid());
-				$block3Workshop = $this->workshopRepository->findOneByL10nParent($registration->getBlock3Workshop()->getUid());
-			}
+            if ($userLanguage === 0) {
+                // german
+                $sender = array($this->settings['mailSender'] => 'Fachtagung Menschenrechtsbildung (HRES)');
+                $subject = 'Reminder und Workshop-Einteilung';
+                $templateName = 'AssignmentGerman';
+                $registrationType = $this->registrationTypeRepository->findOneByUid($registration->getRegistrationType()->getUid());
+                $block1Workshop = $this->workshopRepository->findOneByUid($registration->getBlock1Workshop()->getUid());
+                $block2Workshop = $this->workshopRepository->findOneByUid($registration->getBlock2Workshop()->getUid());
+                $block3Workshop = $this->workshopRepository->findOneByUid($registration->getBlock3Workshop()->getUid());
+            } elseif ($userLanguage === 3) {
+                // english
+                $sender = array($this->settings['mailSender'] => 'Human Rights Education Symposium (HRES)');
+                $subject = 'Reminder and workshop schedule';
+                $templateName = 'AssignmentEnglish';
+                $registrationType = $this->registrationTypeRepository->findOneByL10nParent($registration->getRegistrationType()->getUid());
+                $block1Workshop = $this->workshopRepository->findOneByL10nParent($registration->getBlock1Workshop()->getUid());
+                $block2Workshop = $this->workshopRepository->findOneByL10nParent($registration->getBlock2Workshop()->getUid());
+                $block3Workshop = $this->workshopRepository->findOneByL10nParent($registration->getBlock3Workshop()->getUid());
+            }
 
-			// send cc to hres-contact and billing office
+            // send cc to hres-contact and billing office
             $cc = array();
             $cc[] = $this->settings['mailSender'];
             $cc[] = $this->settings['mailCcReceipient'];
 
-			$recipientName = $registration->getFirstname() . ' ' . $registration->getLastname();
-			$recipient = array($registration->getEmail() => $recipientName);
+            $recipientName = $registration->getFirstname() . ' ' . $registration->getLastname();
+            $recipient = array($registration->getEmail() => $recipientName);
 
-			$embeddedPicture = t3lib_div::getFileAbsFileName('typo3conf/ext/phz_hresregistration/Resources/Private/Backend/Templates/Email/map.jpg');
+            $embeddedPicture = t3lib_div::getFileAbsFileName('typo3conf/ext/phz_hresregistration/Resources/Private/Backend/Templates/Email/map.jpg');
 
-			$variables = array(
-				'registration' => $registration,
-				'registrationType' => $registrationType,
-				'block1Workshop' => $block1Workshop,
-				'block2Workshop' => $block2Workshop,
-				'block3Workshop' => $block3Workshop
-			);
+            $variables = array(
+                'registration' => $registration,
+                'registrationType' => $registrationType,
+                'block1Workshop' => $block1Workshop,
+                'block2Workshop' => $block2Workshop,
+                'block3Workshop' => $block3Workshop
+            );
 
-			$messageSent = $this->sendTemplateEmail($recipient, $sender, $cc, $subject, $templateName, $variables, array(), $embeddedPicture);
-			if ($messageSent) {
-				$registration->setAssignmentSent(1);
-				$this->flashMessageContainer->add('E-Mail versendet an ' . $registration->getEmail());
-			} else {
-				$this->flashMessageContainer->add('Fehler: E-Mail nicht versendet an ' . $registration->getEmail());
-			}
-			$this->redirect('sendConfirmationMail');
-		}
+            $messageSent = $this->sendTemplateEmail($recipient, $sender, $cc, $subject, $templateName, $variables, array(), $embeddedPicture);
+            if ($messageSent) {
+                $registration->setAssignmentSent(1);
+                $this->flashMessageContainer->add('E-Mail versendet an ' . $registration->getEmail());
+            } else {
+                $this->flashMessageContainer->add('Fehler: E-Mail nicht versendet an ' . $registration->getEmail());
+            }
+            $this->redirect('sendConfirmationMail');
+        }
 
-	}
+    }
 
-	/**
-	 * action list
-	 *
-	 * @return void
-	 */
-	public function listAction() {
-		//$registrations = $this->registrationRepository->findAll();
-		//$this->view->assign('registrations', $registrations);
-	}
+    /**
+     * action list
+     *
+     * @return void
+     */
+    public function listAction() {
+        //$registrations = $this->registrationRepository->findAll();
+        //$this->view->assign('registrations', $registrations);
+    }
 
-	/**
-	 * action new
-	 *
-	 * @param $newRegistration
-	 * @dontvalidate $newRegistration
-	 * @return void
-	 */
-	public function newAction(Tx_PhzHresregistration_Domain_Model_Registration $newRegistration = NULL) {
-		$registrationTypes = $this->registrationTypeRepository->findAll();
-		$workshops = $this->workshopRepository->findAll();
-		$this->view->assign('registrationTypes', $registrationTypes);
-		$this->view->assign('workshops', $workshops);
-		$this->view->assign('newRegistration', $newRegistration);
-	}
+    /**
+     * action new
+     *
+     * @param $newRegistration
+     * @dontvalidate $newRegistration
+     * @return void
+     */
+    public function newAction(Tx_PhzHresregistration_Domain_Model_Registration $newRegistration = NULL) {
+        $registrationTypes = $this->registrationTypeRepository->findAll();
+        $workshops = $this->workshopRepository->findAll();
+        $this->view->assign('registrationTypes', $registrationTypes);
+        $this->view->assign('workshops', $workshops);
+        $this->view->assign('newRegistration', $newRegistration);
+    }
 
-	/**
-	 * action create
-	 *
-	 * @param $newRegistration
-	 * @return void
-	 */
-	public function createAction(Tx_PhzHresregistration_Domain_Model_Registration $newRegistration) {
+    /**
+     * action create
+     * @param array $newRegistration
+     * @return void
+     */
+    public function createAction($newRegistration) {
 
-		$userLanguage = (int)$GLOBALS['TSFE']->sys_language_uid;
-		$newRegistration->setUserLanguage($userLanguage);
-		$this->registrationRepository->add($newRegistration);
+        $newRegistrationArray = $newRegistration;
 
-		if ($userLanguage === 0) {
-			// german
-			$sender = array($this->settings['mailSender'] => 'Fachtagung Menschenrechtsbildung (HRES)');
-		} elseif ($userLanguage === 3) {
-			// english
-			$sender = array($this->settings['mailSender'] => 'Human Rights Education Symposium (HRES)');
-		}
+        $newRegistration = new Tx_PhzHresregistration_Domain_Model_Registration;
+        foreach ($newRegistrationArray as $key => $val) {
+            $newRegistration->setCustomProperty($key,$val);
+        }
+
+        $userLanguage = (int)$GLOBALS['TSFE']->sys_language_uid;
+        $newRegistration->setUserLanguage($userLanguage);
+        $this->registrationRepository->add($newRegistration);
+
+        if ($userLanguage === 0) {
+            // german
+            $sender = array($this->settings['mailSender'] => 'Fachtagung Menschenrechtsbildung (HRES)');
+        } elseif ($userLanguage === 3) {
+            // english
+            $sender = array($this->settings['mailSender'] => 'Human Rights Education Symposium (HRES)');
+        }
 
         // send cc to hres-contact and billing office
         $cc = array();
         $cc[] = $this->settings['mailSender'];
-		$cc[] = $this->settings['mailCcReceipient'];
+        $cc[] = $this->settings['mailCcReceipient'];
 
-		$subject = Tx_Extbase_Utility_Localization::translate('tx_phzhresregistration_domain_model_registration.confirmationMail.subject', $this->extensionName);
-		$recipientName = $newRegistration->getFirstname() . ' ' . $newRegistration->getLastname();
-		$recipient = array($newRegistration->getEmail() => $recipientName);
-		$templateName = 'ConfirmationMail';
+        $subject = Tx_Extbase_Utility_Localization::translate('tx_phzhresregistration_domain_model_registration.confirmationMail.subject', $this->extensionName);
+        $recipientName = $newRegistration->getFirstname() . ' ' . $newRegistration->getLastname();
+        $recipient = array($newRegistration->getEmail() => $recipientName);
+        $templateName = 'ConfirmationMail';
 
-		$this->sendTemplateEmail($recipient, $sender, $cc, $subject, $templateName, array('newRegistration' => $newRegistration));
+        $this->sendTemplateEmail($recipient, $sender, $cc, $subject, $templateName, array('newRegistration' => $newRegistration));
 
-		$this->redirect('list');
+        $this->redirect('list');
 
-	}
+    }
 
-	/**
-	 * action edit
-	 *
-	 * @param $registration
-	 * @return void
-	 */
-	public function editAction(Tx_PhzHresregistration_Domain_Model_Registration $registration) {
-		$this->view->assign('registration', $registration);
-	}
+    /**
+     * action edit
+     *
+     * @param $registration
+     * @return void
+     */
+    public function editAction(Tx_PhzHresregistration_Domain_Model_Registration $registration) {
+        $this->view->assign('registration', $registration);
+    }
 
-	/**
-	 * action update
-	 *
-	 * @param $registration
-	 * @return void
-	 */
-	public function updateAction(Tx_PhzHresregistration_Domain_Model_Registration $registration) {
-		$this->registrationRepository->update($registration);
-		$this->flashMessageContainer->add('Your Registration was updated.');
-		$this->redirect('list');
-	}
+    /**
+     * action update
+     *
+     * @param $registration
+     * @return void
+     */
+    public function updateAction(Tx_PhzHresregistration_Domain_Model_Registration $registration) {
+        $this->registrationRepository->update($registration);
+        $this->flashMessageContainer->add('Your Registration was updated.');
+        $this->redirect('list');
+    }
 
-	/**
-	 * action delete
-	 *
-	 * @param $registration
-	 * @return void
-	 */
-	public function deleteAction(Tx_PhzHresregistration_Domain_Model_Registration $registration) {
-		$this->registrationRepository->remove($registration);
-		$this->flashMessageContainer->add('Your Registration was removed.');
-		$this->redirect('list');
-	}
+    /**
+     * action delete
+     *
+     * @param $registration
+     * @return void
+     */
+    public function deleteAction(Tx_PhzHresregistration_Domain_Model_Registration $registration) {
+        $this->registrationRepository->remove($registration);
+        $this->flashMessageContainer->add('Your Registration was removed.');
+        $this->redirect('list');
+    }
 
 }
 ?>
