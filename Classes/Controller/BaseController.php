@@ -32,39 +32,49 @@
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  *
  */
-class Tx_PhzHresregistration_Controller_BaseController extends Tx_Extbase_MVC_Controller_ActionController {
+class Tx_PhzHresregistration_Controller_BaseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
 	 * @param array $recipient recipient of the email in the format array('recipient@domain.tld' => 'Recipient Name')
 	 * @param array $sender sender of the email in the format array('sender@domain.tld' => 'Sender Name')
 	 * @param array $cc
 	 * @param string $subject subject of the email
-	 * @param string $templateName template name (UpperCamelCase)
+	 * @param string $templateName \TYPO3\CMS\Backend\Template\DocumentTemplate name (UpperCamelCase)
 	 * @param array $variables variables to be passed to the Fluid view
 	 * @param array $attachments variables to be passed to the SwiftMailer
 	 * @param string $embeddedFile
 	 * @return boolean TRUE on success, otherwise false
 	 */
 	protected function sendTemplateEmail(array $recipient, array $sender, array $cc, $subject, $templateName, array $variables = array(), array $attachments = array(), $embeddedFile = '') {
-		$emailView = $this->objectManager->create('Tx_Fluid_View_StandaloneView');
+
+		$emailView = $this->objectManager->create('\TYPO3\CMS\Fluid\View\StandaloneView');
 		$emailView->setFormat('html');
 		$extensionName = $this->request->getControllerExtensionName();
 		$emailView->getRequest()->setControllerExtensionName($extensionName);
-		$extbaseFrameworkConfiguration = $this->configurationManager->getConfiguration(Tx_Extbase_Configuration_ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
-		$templateRootPath = t3lib_div::getFileAbsFileName($extbaseFrameworkConfiguration['view']['templateRootPath']);
+		$extbaseFrameworkConfiguration = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
+		$templateRootPath = \TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($extbaseFrameworkConfiguration['view']['templateRootPath']);
 		$templatePathAndFilename = $templateRootPath . 'Email/' . $templateName . '.html';
 
-		$message = t3lib_div::makeInstance('t3lib_mail_Message');
+		$message = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('t3lib_mail_Message');
+
+
+
+
 		if (!empty($embeddedFile)) {
 			$variables['embeddedPicture'] = $message->embed(Swift_Image::fromPath($embeddedFile));
 		}
 
 		$emailView->setTemplatePathAndFilename($templatePathAndFilename);
+
+
 		$emailView->assignMultiple($variables);
 		$emailBody = $emailView->render();
-		$message->setTo($recipient)
+		// $message->setTo($recipient)
+		// 	  ->setFrom($sender)
+		// 	  ->setCc($cc)
+		// 	  ->setSubject($subject);
+			$message->setTo($recipient)
 			  ->setFrom($sender)
-			  ->setCc($cc)
 			  ->setSubject($subject);
 
 		foreach ($attachments as $attachment) {
@@ -75,7 +85,7 @@ class Tx_PhzHresregistration_Controller_BaseController extends Tx_Extbase_MVC_Co
 		$message->setBody($emailBody, 'text/html');
 
 		$message->send();
-		return $message->isSent();
+		//return $message->isSent();
 	}
 
 }

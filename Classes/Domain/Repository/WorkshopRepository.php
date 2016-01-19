@@ -32,16 +32,16 @@
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  *
  */
-class Tx_PhzHresregistration_Domain_Repository_WorkshopRepository extends Tx_Extbase_Persistence_Repository {
+class Tx_PhzHresregistration_Domain_Repository_WorkshopRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	 protected $defaultOrderings = array(
-         'block' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING,
-         'sorting' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING
+         'block' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+         'sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
      );
 
 	/**
 	 * @param integer $uid
-	 * @return Tx_Extbase_Persistence_QueryResultInterface
+	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
 	public function findOneByL10nParent($uid) {
 		$query = $this->createQuery();

@@ -2,16 +2,17 @@
 
 <div id="tabs">
 	<ul>
-		<li><a href="#tabs-1">
+		<li>
+		<a href="{baseUri}#tabs-1">
 			<f:translate key="tx_phzhresregistration_domain_model_registration.tab.registrationtype"/>
 		</a></li>
-		<li><a href="#tabs-2">
+		<li><a href="{baseUri}#tabs-2">
 			<f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops"/>
 		</a></li>
-		<li><a href="#tabs-3">
+		<li><a href="{baseUri}#tabs-3">
 			<f:translate key="tx_phzhresregistration_domain_model_registration.tab.personaldata"/>
 		</a></li>
-		<li><a href="#tabs-4">
+		<li><a href="{baseUri}#tabs-4">
 			<f:translate key="tx_phzhresregistration_domain_model_registration.tab.complete"/>
 		</a></li>
 	</ul>
@@ -44,10 +45,8 @@
 
 						<div class="block{groupNumber}Workshop">
 
-							<f:form.radio class="block{groupNumber}Pri1" name="newRegistration[block{groupNumber}Pri1]"
-										  value="{workshop.uid}"/>
-							<f:form.radio class="block{groupNumber}Pri2" name="newRegistration[block{groupNumber}Pri2]"
-										  value="{workshop.uid}"/>
+							<f:form.radio class="block{groupNumber}Pri1" name="block{groupNumber}Pri1" value="{workshop.uid}"/>
+							<f:form.radio class="block{groupNumber}Pri2" name="block{groupNumber}Pri2" value="{workshop.uid}"/>
 							<f:if condition="{workshop.tooltip}">
 								<f:then>
 									<label title="{workshop.tooltip}">{workshop.title}</label><br/>

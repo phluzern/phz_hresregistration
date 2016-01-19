@@ -32,14 +32,14 @@
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  *
  */
-class Tx_PhzHresregistration_Domain_Repository_RegistrationRepository extends Tx_Extbase_Persistence_Repository {
+class Tx_PhzHresregistration_Domain_Repository_RegistrationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	 protected $defaultOrderings = array(
-         'uid' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING,
+         'uid' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
      );
 
 	/**
-	 * @return Tx_Extbase_Persistence_QueryResultInterface
+	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
 	public function findAllAssigned() {
 		$query = $this->createQuery();
@@ -58,7 +58,7 @@ class Tx_PhzHresregistration_Domain_Repository_RegistrationRepository extends Tx
 	 * @param $workshop
 	 * @param $block
 	 * @param $suffix
-	 * @return Tx_Extbase_Persistence_QueryResultInterface
+	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
 	public function findByWorkshopInterestAndBlockAndFieldSuffix($workshop, $block, $suffix) {
 		$fieldName = 'block' . $block . '_' . $suffix;

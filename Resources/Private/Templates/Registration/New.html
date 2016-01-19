@@ -17,7 +17,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:render partial="FormErrors" />
 
-<f:form method="post" action="create" id="newRegistration" name="newRegistration" object="newRegistration">
-	<f:render partial="Registration/FormFields" arguments="{registrationTypes:registrationTypes, workshops:workshops}" />
+<f:form method="post" action="create" id="newRegistration" name="newRegistration" object="{newRegistration}" objectName="newRegistration">
+	<f:render partial="Registration/FormFields" arguments="{registrationTypes:registrationTypes, workshops:workshops, baseUri:baseUri}" />
 </f:form>
 </f:section>

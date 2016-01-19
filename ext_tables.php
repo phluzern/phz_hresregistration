@@ -3,7 +3,7 @@ if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-Tx_Extbase_Utility_Extension::registerPlugin(
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	$_EXTKEY,
 	'Hresregistration',
 	'PHZ HRES Registration'
@@ -22,7 +22,7 @@ if (TYPO3_MODE === 'BE') {
 	/**
 	 * Registers a Backend Module
 	 */
-	Tx_Extbase_Utility_Extension::registerModule(
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
 		$_EXTKEY,
 		'web',	 // Make module a submodule of 'web'
 		'hresmanagement',	// Submodule key
@@ -42,11 +42,11 @@ if (TYPO3_MODE === 'BE') {
 }
 
 
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'PHZ HRES Registration');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'PHZ HRES Registration');
 
 
-t3lib_extMgm::addLLrefForTCAdescr('tx_phzhresregistration_domain_model_registration', 'EXT:phz_hresregistration/Resources/Private/Language/locallang_csh_tx_phzhresregistration_domain_model_registration.xml');
-t3lib_extMgm::allowTableOnStandardPages('tx_phzhresregistration_domain_model_registration');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_phzhresregistration_domain_model_registration', 'EXT:phz_hresregistration/Resources/Private/Language/locallang_csh_tx_phzhresregistration_domain_model_registration.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_phzhresregistration_domain_model_registration');
 $TCA['tx_phzhresregistration_domain_model_registration'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:phz_hresregistration/Resources/Private/Language/locallang_db.xml:tx_phzhresregistration_domain_model_registration',
@@ -70,13 +70,13 @@ $TCA['tx_phzhresregistration_domain_model_registration'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/TCA/Registration.php',
-		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_phzhresregistration_domain_model_registration.gif'
+		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Registration.php',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_phzhresregistration_domain_model_registration.gif'
 	),
 );
 
-t3lib_extMgm::addLLrefForTCAdescr('tx_phzhresregistration_domain_model_registrationtype', 'EXT:phz_hresregistration/Resources/Private/Language/locallang_csh_tx_phzhresregistration_domain_model_registrationtype.xml');
-t3lib_extMgm::allowTableOnStandardPages('tx_phzhresregistration_domain_model_registrationtype');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_phzhresregistration_domain_model_registrationtype', 'EXT:phz_hresregistration/Resources/Private/Language/locallang_csh_tx_phzhresregistration_domain_model_registrationtype.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_phzhresregistration_domain_model_registrationtype');
 $TCA['tx_phzhresregistration_domain_model_registrationtype'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:phz_hresregistration/Resources/Private/Language/locallang_db.xml:tx_phzhresregistration_domain_model_registrationtype',
@@ -97,13 +97,13 @@ $TCA['tx_phzhresregistration_domain_model_registrationtype'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/TCA/RegistrationType.php',
-		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_phzhresregistration_domain_model_registrationtype.gif'
+		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/RegistrationType.php',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_phzhresregistration_domain_model_registrationtype.gif'
 	),
 );
 
-t3lib_extMgm::addLLrefForTCAdescr('tx_phzhresregistration_domain_model_workshop', 'EXT:phz_hresregistration/Resources/Private/Language/locallang_csh_tx_phzhresregistration_domain_model_workshop.xml');
-t3lib_extMgm::allowTableOnStandardPages('tx_phzhresregistration_domain_model_workshop');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_phzhresregistration_domain_model_workshop', 'EXT:phz_hresregistration/Resources/Private/Language/locallang_csh_tx_phzhresregistration_domain_model_workshop.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_phzhresregistration_domain_model_workshop');
 $TCA['tx_phzhresregistration_domain_model_workshop'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:phz_hresregistration/Resources/Private/Language/locallang_db.xml:tx_phzhresregistration_domain_model_workshop',
@@ -125,8 +125,8 @@ $TCA['tx_phzhresregistration_domain_model_workshop'] = array(
 			'endtime' => 'endtime',
 		),
         'sortby' => 'sorting',
-		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/TCA/Workshop.php',
-		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_phzhresregistration_domain_model_workshop.gif'
+		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Workshop.php',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_phzhresregistration_domain_model_workshop.gif'
 	),
 );
 

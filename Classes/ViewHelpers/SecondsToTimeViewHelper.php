@@ -6,7 +6,7 @@
  * Time: 11:48
  */
 
-class Tx_PhzHresregistration_ViewHelpers_SecondsToTimeViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class Tx_PhzHresregistration_ViewHelpers_SecondsToTimeViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
     /**
      * @param integer $seconds

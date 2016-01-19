@@ -17,7 +17,7 @@
  * This is the base class for ViewHelpers that work with encodings.
  * Currently that are format.htmlentities, format.htmlentitiesDecode and format.htmlspecialchars
  */
-abstract class Tx_PhzHresregistration_ViewHelpers_Format_AbstractEncodingViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+abstract class Tx_PhzHresregistration_ViewHelpers_Format_AbstractEncodingViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * @var string
