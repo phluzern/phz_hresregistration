@@ -58,8 +58,6 @@ class Tx_PhzHresregistration_Controller_BaseController extends \TYPO3\CMS\Extbas
 		$message = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('t3lib_mail_Message');
 
 
-
-
 		if (!empty($embeddedFile)) {
 			$variables['embeddedPicture'] = $message->embed(Swift_Image::fromPath($embeddedFile));
 		}
@@ -69,13 +67,10 @@ class Tx_PhzHresregistration_Controller_BaseController extends \TYPO3\CMS\Extbas
 
 		$emailView->assignMultiple($variables);
 		$emailBody = $emailView->render();
-		// $message->setTo($recipient)
-		// 	  ->setFrom($sender)
-		// 	  ->setCc($cc)
-		// 	  ->setSubject($subject);
-			$message->setTo($recipient)
-			  ->setFrom($sender)
-			  ->setSubject($subject);
+		$message->setTo($recipient)
+		      ->setFrom($sender)
+		 	  ->setCc($cc)
+		 	  ->setSubject($subject);
 
 		foreach ($attachments as $attachment) {
 			$message->attach($attachment);
@@ -84,8 +79,11 @@ class Tx_PhzHresregistration_Controller_BaseController extends \TYPO3\CMS\Extbas
 		// HTML Email
 		$message->setBody($emailBody, 'text/html');
 
+		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($variables);
+		//exit;
+
 		$message->send();
-		//return $message->isSent();
+		return $message->isSent();
 	}
 
 }

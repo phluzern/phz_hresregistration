@@ -59,6 +59,14 @@ class Tx_PhzHresregistration_Controller_RegistrationController extends Tx_PhzHre
 	protected $workshopRepository;
 
 	/**
+     * persistanceManager
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager
+     * @inject
+     */
+    protected $persistenceManager = NULL;
+
+	/**
 	 * action show
 	 *
 	 * @param $registration
@@ -86,9 +94,12 @@ class Tx_PhzHresregistration_Controller_RegistrationController extends Tx_PhzHre
 	public function sendConfirmationMailAction() {
 		$registrations = $this->registrationRepository->findAllAssigned();
 
+
+
 		foreach($registrations as $registration) {
 
 			$userLanguage = $registration->getUserLanguage();
+
 
 			if ($userLanguage === 0) {
 				// german
@@ -96,19 +107,34 @@ class Tx_PhzHresregistration_Controller_RegistrationController extends Tx_PhzHre
 				$subject = 'Reminder und Workshop-Einteilung';
 				$templateName = 'AssignmentGerman';
 				$registrationType = $this->registrationTypeRepository->findOneByUid($registration->getRegistrationType()->getUid());
-				$block1Workshop = $this->workshopRepository->findOneByUid($registration->getBlock1Workshop()->getUid());
-				$block2Workshop = $this->workshopRepository->findOneByUid($registration->getBlock2Workshop()->getUid());
-				$block3Workshop = $this->workshopRepository->findOneByUid($registration->getBlock3Workshop()->getUid());
+				if($registration->getBlock1Workshop() !== NULL) {
+					$block1Workshop = $this->workshopRepository->findOneByUid($registration->getBlock1Workshop()->getUid());
+				}
+				if($registration->getBlock2Workshop() !== NULL) {
+					$block2Workshop = $this->workshopRepository->findOneByUid($registration->getBlock2Workshop()->getUid());
+				}
+				if($registration->getBlock3Workshop() !== NULL) {
+					$block3Workshop = $this->workshopRepository->findOneByUid($registration->getBlock3Workshop()->getUid());
+				}
 			} elseif ($userLanguage === 3) {
 				// english
 				$sender = array($this->settings['mailSender'] => 'Human Rights Education Symposium (HRES)');
 				$subject = 'Reminder and workshop schedule';
 				$templateName = 'AssignmentEnglish';
-				$registrationType = $this->registrationTypeRepository->findOneByL10nParent($registration->getRegistrationType()->getUid());
-				$block1Workshop = $this->workshopRepository->findOneByL10nParent($registration->getBlock1Workshop()->getUid());
-				$block2Workshop = $this->workshopRepository->findOneByL10nParent($registration->getBlock2Workshop()->getUid());
-				$block3Workshop = $this->workshopRepository->findOneByL10nParent($registration->getBlock3Workshop()->getUid());
+
+
+				$registrationType = $this->registrationTypeRepository->findOneByUid($registration->getRegistrationType()->getUid());
+				if($registration->getBlock1Workshop() !== NULL) {
+					$block1Workshop = $this->workshopRepository->findOneByUid($registration->getBlock1Workshop()->getUid());
+				}
+				if($registration->getBlock2Workshop() !== NULL) {
+					$block2Workshop = $this->workshopRepository->findOneByUid($registration->getBlock2Workshop()->getUid());
+				}
+				if($registration->getBlock3Workshop() !== NULL) {
+					$block3Workshop = $this->workshopRepository->findOneByUid($registration->getBlock3Workshop()->getUid());
+				}
 			}
+
 
 			// send cc to hres-contact and billing office
             $cc = array();
@@ -128,14 +154,23 @@ class Tx_PhzHresregistration_Controller_RegistrationController extends Tx_PhzHre
 				'block3Workshop' => $block3Workshop
 			);
 
+				//				\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($variables);
+		//exit;
+
+
 			$messageSent = $this->sendTemplateEmail($recipient, $sender, $cc, $subject, $templateName, $variables, array(), $embeddedPicture);
+
+
+
 			if ($messageSent) {
 				$registration->setAssignmentSent(1);
+				$this->registrationRepository->update($registration);
 				$this->flashMessageContainer->add('E-Mail versendet an ' . $registration->getEmail());
 			} else {
 				$this->flashMessageContainer->add('Fehler: E-Mail nicht versendet an ' . $registration->getEmail());
 			}
-			$this->redirect('sendConfirmationMail');
+			//$this->redirect('sendConfirmationMail');
+			$this->persistenceManager->persistAll();
 		}
 
 	}
@@ -164,6 +199,9 @@ class Tx_PhzHresregistration_Controller_RegistrationController extends Tx_PhzHre
 		$this->view->assign('registrationTypes', $registrationTypes);
 		$this->view->assign('workshops', $workshops);
 		$this->view->assign('newRegistration', $newRegistration);
+
+		//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump('huhu');
+		//exit;
 		$this->view->assign('baseUri', $_SERVER['REQUEST_URI']);
 	}
 
@@ -199,18 +237,37 @@ $this->registrationRepository->add($newRegistration);
 		$templateName = 'ConfirmationMail';
 
 
+		if(isset($_POST['tx_phzhresregistration']['block1Pri1'])) {
+			$newRegistration->setBlock1Pri1($this->workshopRepository->findOneByUid($_POST['tx_phzhresregistration']['block1Pri1']));
+
+		}
+		if(isset($_POST['tx_phzhresregistration']['block1Pri2'])) {
+		$newRegistration->setBlock1Pri2($this->workshopRepository->findOneByUid($_POST['tx_phzhresregistration']['block1Pri2']));
+
+		}
+
+		if(isset($_POST['tx_phzhresregistration']['block2Pri1'])) {
+			$newRegistration->setBlock2Pri1($this->workshopRepository->findOneByUid($_POST['tx_phzhresregistration']['block2Pri1']));
+
+		}
+		if(isset($_POST['tx_phzhresregistration']['block2Pri2'])) {
+		$newRegistration->setBlock2Pri2($this->workshopRepository->findOneByUid($_POST['tx_phzhresregistration']['block2Pri2']));
+
+		}
+		if(isset($_POST['tx_phzhresregistration']['block3Pri1'])) {
+			$newRegistration->setBlock3Pri1($this->workshopRepository->findOneByUid($_POST['tx_phzhresregistration']['block3Pri1']));
+
+		}
+		if(isset($_POST['tx_phzhresregistration']['block3Pri2'])) {
+		$newRegistration->setBlock3Pri2($this->workshopRepository->findOneByUid($_POST['tx_phzhresregistration']['block3Pri2']));
+
+		}
 
 
-$newRegistration->setBlock1Pri1($this->workshopRepository->findOneByUid($_POST['tx_phzhresregistration']['block1Pri1']));
-$newRegistration->setBlock1Pri2($this->workshopRepository->findOneByUid($_POST['tx_phzhresregistration']['block1Pri2']));
-$newRegistration->setBlock2Pri1($this->workshopRepository->findOneByUid($_POST['tx_phzhresregistration']['block2Pri1']));
-$newRegistration->setBlock2Pri2($this->workshopRepository->findOneByUid($_POST['tx_phzhresregistration']['block2Pri2']));
-$newRegistration->setBlock3Pri1($this->workshopRepository->findOneByUid($_POST['tx_phzhresregistration']['block3Pri1']));
-$newRegistration->setBlock3Pri2($this->workshopRepository->findOneByUid($_POST['tx_phzhresregistration']['block3Pri2']));
 
 
-//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($newRegistration);
-//exit;
+		
+
 
 		$this->sendTemplateEmail($recipient, $sender, $cc, $subject, $templateName, array('newRegistration' => $newRegistration));
 

@@ -48,7 +48,7 @@ class Tx_PhzHresregistration_Domain_Repository_RegistrationRepository extends \T
 			$query->logicalAnd(
 				$query->greaterThanOrEqual('block1_workshop', 1),
 				$query->greaterThanOrEqual('block2_workshop', 1),
-				$query->greaterThanOrEqual('block3_workshop', 1),
+				//$query->greaterThanOrEqual('block3_workshop', 1),
 				$query->equals('assignmentSent', 0)
 			)
 		)->execute();

@@ -19,10 +19,10 @@
         </f:else>
     </f:if>
 
-    <p>Am 12. April 2014 wird die <strong>Fachtagung Menschenrechtsbildung Luzern</strong> zum Thema <strong>„Menschenrechtsbildung und die Schulfächer“</strong> stattfinden. Während diesem Tag steht in Luzern die Menschenrechtsbildung im Mittelpunkt des Geschehens. Wir freuen uns über Anmeldungen von Teilnehmenden aus diversen Expertenbereichen, was spannende Diskussionen und einen vielversprechenden Erfahrungs- und Wissensaustausch verheisst.</p>
+    <p>Am 16. April 2016 wird die <strong>Fachtagung Menschenrechtsbildung Luzern</strong> zum Thema <strong>„Menschenrechte in der Berufsbildung“</strong> stattfinden. Während diesem Tag steht in Luzern die Menschenrechtsbildung im Mittelpunkt des Geschehens. Wir freuen uns über Anmeldungen von Teilnehmenden aus diversen Expertenbereichen, was spannende Diskussionen und einen vielversprechenden Erfahrungs- und Wissensaustausch verheisst.</p>
     <p>Um die Tagung pünktlich eröffnen und einen reibungslosen Ablauf gewährleisten zu können, bitten wir Sie, frühzeitig im Uni/PH-Gebäude in Luzern zu erscheinen (Türöffnung 8.30 Uhr) und bei der Anmeldung diese E-Mail in ausgedruckter Form bereit zu halten. Diese wird für den Einlass benötigt. Das Gebäude befindet sich an der Frohburgstrasse 3, direkt neben dem KKL und dem Hauptbahnhof.</p>
-    <p>Untenstehend finden Sie Ihre Workshopeinteilung für die drei Workshoprunden. Das Programm zur Fachtagung finden Sie unter <a href="http://www.hres.phlu.ch">www.hres.phlu.ch</a>. Bei Fragen Ihrerseits stehen wir Ihnen gerne unter <a href="mailto:hres@phlu.ch">hres@phlu.ch</a> zur Verfügung.
-    <p>Wir danken Ihnen herzlich für Ihre Kenntnisnahme und freuen uns sehr, Sie an der <strong>Fachtagung Menschenrechtsbildung Luzern 2014</strong> begrüssen zu dürfen.</p>
+    <p>Untenstehend finden Sie Ihre Workshopeinteilung für die zwei Workshoprunden. Das Programm zur Fachtagung finden Sie unter <a href="http://www.hres.phlu.ch">www.hres.phlu.ch</a>. Bei Fragen Ihrerseits stehen wir Ihnen gerne unter <a href="mailto:hres@phlu.ch">hres@phlu.ch</a> zur Verfügung.
+    <p>Wir danken Ihnen herzlich für Ihre Kenntnisnahme und freuen uns sehr, Sie an der <strong>Fachtagung Menschenrechtsbildung Luzern 2016</strong> begrüssen zu dürfen.</p>
 
     <p>Freundliche Grüsse</p>
     
@@ -31,21 +31,11 @@
             <tr>
                 <td>
                     Thomas Kirchschläger<br />
-                    Co-Leiter ZMRB
+                    Leiter ZMRB
                 </td>
                 <td>
-                    PD Dr. Peter G. Kirchschläger<br />
-                    Co-Leiter ZMRB
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Franziska Brugger<br />
-                    Verantwortliche Fachtagung 2014
-                </td>
-                <td>
-                    Elisha Frei<br />
-                    Leitung StudentTeam 2014
+                    Nadine Walder<br />
+                    Verantwortliche Fachtagung 2016<br />
                 </td>
             </tr>
         </tbody>
@@ -60,7 +50,6 @@
         CH-6003 Luzern<br />
         Schweiz<br />
         Tel. +41 (0)41 228 47 34<br />
-        Fax +41 (0)41 228 47 31<br />
         E-Mail <a href="mailto:hres@phlu.ch">hres@phlu.ch</a><br />
         <a href="http://www.hres.phlu.ch">www.hres.phlu.ch</a>
     </p>
@@ -85,30 +74,36 @@
                     Ihre Workshop-Einteilung
                 </th>
             </tr>
-            <tr>
-                <td>
-                    <strong>Runde 1, 11.15-12.30 Uhr</strong>
-                </td>
-                <td>
-                    {registration.block1Workshop.title}, {registration.block1Workshop.speaker}, {registration.block1Workshop.room}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Runde 2, 13.30-14.45 Uhr</strong>
-                </td>
-                <td>
-                    {registration.block2Workshop.title}, {registration.block2Workshop.speaker}, {registration.block2Workshop.room}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Runde 3, 15.15-16.30 Uhr</strong>
-                </td>
-                <td>
-                    {registration.block3Workshop.title}, {registration.block3Workshop.speaker}, {registration.block3Workshop.room}
-                </td>
-            </tr>
+            <f:if condition="{registration.block1Workshop}">
+                <tr>
+                    <td>
+                        <strong>Runde 1, 11.15-12.30 Uhr</strong>
+                    </td>
+                    <td>
+                        {registration.block1Workshop.title}, {registration.block1Workshop.speaker}, {registration.block1Workshop.room}
+                    </td>
+                </tr>
+            </f:if>
+            <f:if condition="{registration.block2Workshop}">
+                <tr>
+                    <td>
+                        <strong>Runde 2, 13.30-14.45 Uhr</strong>
+                    </td>
+                    <td>
+                        {registration.block2Workshop.title}, {registration.block2Workshop.speaker}, {registration.block2Workshop.room}
+                    </td>
+                </tr>
+            </f:if>
+            <f:if condition="{registration.block3Workshop}">
+                <tr>
+                    <td>
+                        <strong>Runde 3, 15.15-16.30 Uhr</strong>
+                    </td>
+                    <td>
+                        {registration.block3Workshop.title}, {registration.block3Workshop.speaker}, {registration.block3Workshop.room}
+                    </td>
+                </tr>
+            </f:if>
             <tr>
                 <th class="header" colspan="2">
                     Persönliche Angaben

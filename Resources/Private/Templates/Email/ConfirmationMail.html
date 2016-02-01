@@ -19,13 +19,118 @@
 		<strong><f:translate key="tx_phzhresregistration_domain_model_registration.tab.selectworkshops" /></strong>
 	</p>
 	<ul>
-		<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block1_pri1" />:</strong> {newRegistration.block1Pri1.title}<br /><em>{newRegistration.block1Pri1.speaker}</em></li>
-		<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block1_pri2" />:</strong> {newRegistration.block1Pri2.title}<br /><em>{newRegistration.block1Pri2.speaker}</em></li>
-		<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block2_pri1" />:</strong> {newRegistration.block2Pri1.title}<br /><em>{newRegistration.block2Pri1.speaker}</em></li>
-		<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block2_pri2" />:</strong> {newRegistration.block2Pri2.title}<br /><em>{newRegistration.block2Pri2.speaker}</em></li>
-		<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block3_pri1" />:</strong> {newRegistration.block3Pri1.title}<br /><em>{newRegistration.block3Pri1.speaker}</em></li>
-		<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block3_pri2" />:</strong> {newRegistration.block3Pri2.title}<br /><em>{newRegistration.block3Pri2.speaker}</em></li>
+
+		<f:if condition="{newRegistration.block1Pri1.title}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block1_pri1" />:</strong> {newRegistration.block1Pri1.title}<br />
+				<em>{newRegistration.block1Pri1.speaker}</em></li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.block1Pri2.title}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block1_pri2" />:</strong> {newRegistration.block1Pri2.title}<br />
+				<em>{newRegistration.block1Pri2.speaker}</em></li>
+			</f:then>
+		</f:if>
+
+		<f:if condition="{newRegistration.block2Pri1.title}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block2_pri1" />:</strong> {newRegistration.block2Pri1.title}<br />
+				<em>{newRegistration.block2Pri1.speaker}</em></li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.block2Pri2.title}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block2_pri2" />:</strong> {newRegistration.block2Pri2.title}<br />
+				<em>{newRegistration.block2Pri2.speaker}</em></li>
+			</f:then>
+		</f:if>
+
+		<f:if condition="{newRegistration.block3Pri1.title}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block3_pri1" />:</strong> {newRegistration.block3Pri1.title}<br />
+				<em>{newRegistration.block3Pri1.speaker}</em></li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.block3Pri2.title}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.block3_pri2" />:</strong> {newRegistration.block3Pri2.title}<br />
+				<em>{newRegistration.block3Pri2.speaker}</em></li>
+			</f:then>
+		</f:if>
 	</ul>
+
+	<p>
+		<strong><f:translate key="tx_phzhresregistration_domain_model_registration.tab.personaldata" /></strong>
+	</p>
+	<ul>
+
+		<f:if condition="{newRegistration.salutation} == 0">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.salutation" />:</strong> {tx_phzhresregistration_domain_model_registration.salutation.female}</li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.salutation} == 1">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.salutation" />:</strong> {tx_phzhresregistration_domain_model_registration.salutation.male}</li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.lastname}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.lastname" />:</strong> {newRegistration.lastname}</li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.firstname}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.firstname" />:</strong> {newRegistration.firstname}</li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.address1}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.address1" />:</strong> {newRegistration.address1}</li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.address2}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.address2" />:</strong> {newRegistration.address2}</li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.zip}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.zip" />:</strong> {newRegistration.zip}</li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.country}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.country" />:</strong> {newRegistration.country}</li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.company}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.company" />:</strong> {newRegistration.company}</li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.phone}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.phone" />:</strong> {newRegistration.phone}</li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.email}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.email" />:</strong> {newRegistration.email}</li>
+			</f:then>
+		</f:if>
+		<f:if condition="{newRegistration.comment}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.comment" />:</strong> {newRegistration.comment}</li>
+			</f:then>
+		</f:if>
+
+	</ul>
+
+
+
+
 
 	<f:translate key="tx_phzhresregistration_domain_model_registration.confirmationMail.contentAfterDetails" />
 	<f:translate key="tx_phzhresregistration_domain_model_registration.confirmationMail.closing" />

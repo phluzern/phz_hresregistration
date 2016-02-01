@@ -11,8 +11,7 @@ plugin.tx_phzhresregistration {
     settings {
         # sender of automails and receipient for billing
         mailSender = info@ihrf.phlu.ch
-        #mailCcReceipient = patrick.erni@phlu.ch
-        mailCcReceipient = adrian.felder@phlu.ch
+        mailCcReceipient = patrick.erni@phlu.ch
     }
 
 }

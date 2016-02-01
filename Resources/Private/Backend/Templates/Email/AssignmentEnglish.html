@@ -19,10 +19,10 @@
         </f:else>
     </f:if>
 
-    <p>On April 12th, 2014 the <strong>Human Rights Education Symposium Lucerne</strong> on the topic <strong>“Human Rights Education and Subject Matters in School”</strong> will take place. During this day human rights education will be at the centre of attention. We are pleased that people from different backgrounds have signed up for the Symposium, since this promises exciting discussions and an exchange of experiences and knowledge.</p>
+    <p>On April 16th, 2016 the <strong>Human Rights Education Symposium Lucerne</strong> on the topic <strong>“Human Rights in Professional Training”</strong> will take place. During this day human rights education will be at the centre of attention. We are pleased that people from different backgrounds have signed up for the Symposium, since this promises exciting discussions and an exchange of experiences and knowledge.</p>
     <p>In order to punctually begin the Symposium and to ensure an efficient entrance procedure, we would be grateful if you arrive on time at the Uni/PH Building in Lucerne (doors open at 8.30 a.m.). Please bring along this printed e-mail, as it is required to gain admission to the Symposium. The Building is located at Frohburgstrasse 3, directly next to the KKL and the train station.</p>
     <p>Below you will find your schedule for the three workshop rounds. The program of the Symposium can be found at <a href="http://www.hres.phlu.ch">www.hres.phlu.ch</a>. If you have any questions feel free to contact us at <a href="mailto:hres@phlu.ch">hres@phlu.ch</a>.</p>
-    <p>Thank you for taking notice of this information. We look forward to greeting you at the <strong>Human Rights Education Symposium Lucerne 2014</strong>.</p>
+    <p>Thank you for taking notice of this information. We look forward to greeting you at the <strong>Human Rights Education Symposium Lucerne 2016</strong>.</p>
 
     <p>Sincerely</p>
 
@@ -31,21 +31,11 @@
             <tr>
                 <td>
                     Thomas Kirchschläger<br />
-                    Co-Director ZMRB
+                    Director ZMRB
                 </td>
                 <td>
-                    PD Dr. Peter G. Kirchschläger<br />
-                    Co-Director ZMRB
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Franziska Brugger<br />
-                    Responsible Symposium 2014
-                </td>
-                <td>
-                    Elisha Frei<br />
-                    Head of the StudentTeam 2014
+                    Nadine Walder<br />
+                    Responsible Symposium 2016
                 </td>
             </tr>
         </tbody>
@@ -60,7 +50,6 @@
         CH-6003 Lucerne<br />
         Switzerland<br />
         Phone +41 (0)41 228 47 34<br />
-        Fax +41 (0)41 228 47 31<br />
         E-Mail <a href="mailto:hres@phlu.ch">hres@phlu.ch</a><br />
         <a href="http://www.hres.phlu.ch">www.hres.phlu.ch</a>
     </p>
@@ -85,30 +74,36 @@
                     Your Workshop Schedule
                 </th>
             </tr>
-            <tr>
-                <td>
-                    <strong>Round 1, 11:15-12:30</strong>
-                </td>
-                <td>
-                    {block1Workshop.title}, {block1Workshop.speaker}, {block1Workshop.room}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Round 2, 13:30-14:45</strong>
-                </td>
-                <td>
-                    {block2Workshop.title}, {block2Workshop.speaker}, {block2Workshop.room}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Round 3, 15:15-16:30</strong>
-                </td>
-                <td>
-                    {block3Workshop.title}, {block3Workshop.speaker}, {block3Workshop.room}
-                </td>
-            </tr>
+            <f:if condition="{registration.block1Workshop}">
+                <tr>
+                    <td>
+                        <strong>Round 1, 11:15-12:30</strong>
+                    </td>
+                    <td>
+                        {block1Workshop.title}, {block1Workshop.speaker}, {block1Workshop.room}
+                    </td>
+                </tr>
+            </f:if>
+            <f:if condition="{registration.block2Workshop}">
+                <tr>
+                    <td>
+                        <strong>Round 2, 13:30-14:45</strong>
+                    </td>
+                    <td>
+                        {block2Workshop.title}, {block2Workshop.speaker}, {block2Workshop.room}
+                    </td>
+                </tr>
+            </f:if>
+            <f:if condition="{registration.block3Workshop}">
+                <tr>
+                    <td>
+                        <strong>Round 3, 15:15-16:30</strong>
+                    </td>
+                    <td>
+                        {block3Workshop.title}, {block3Workshop.speaker}, {block3Workshop.room}
+                    </td>
+                </tr>
+            </f:if>
             <tr>
                 <th class="header" colspan="2">
                     Personal data
