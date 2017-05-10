@@ -100,6 +100,11 @@
 				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.zip" />:</strong> {newRegistration.zip}</li>
 			</f:then>
 		</f:if>
+		<f:if condition="{newRegistration.city}">
+			<f:then>
+				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.city" />:</strong> {newRegistration.city}</li>
+			</f:then>
+		</f:if>
 		<f:if condition="{newRegistration.country}">
 			<f:then>
 				<li><strong><f:translate key="tx_phzhresregistration_domain_model_registration.country" />:</strong> {newRegistration.country}</li>
